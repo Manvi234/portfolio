@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manvi Gawande - Data Scientist</title>
+    <title>Manvi Gawande — Data Scientist & NLP Researcher</title>
+    <meta name="description" content="Manvi Gawande — Data Scientist specializing in NLP and Generative AI. Master's student at Indiana University. Open to full-time roles from Summer 2026.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --accent: #2c7a7b;
+            --accent-light: #e6f4f4;
+            --accent-dark: #1a5c5d;
+        }
         body {
             background-color: #f8f9fa;
             color: #333333;
@@ -17,16 +23,238 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Merriweather', serif;
         }
-        .accent-color {
-            color: #2c7a7b;
-        }
-        .accent-bg {
-            background-color: #2c7a7b;
-        }
+        .accent-color { color: var(--accent); }
+        .accent-bg { background-color: var(--accent); }
         .link-underline {
             text-decoration: underline;
-            text-decoration-color: #2c7a7b;
+            text-decoration-color: var(--accent);
         }
+        /* FIX 02 — Section heading style */
+        .section-heading {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 3px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        /* FIX 01 — Hero specialty tags */
+        .specialty-tag {
+            display: inline-block;
+            background-color: var(--accent-light);
+            color: var(--accent-dark);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid #b2d8d8;
+        }
+        .specialty-tag.available {
+            background-color: #d1fae5;
+            color: #065f46;
+            border-color: #6ee7b7;
+        }
+        /* FIX 01 — Availability pulse dot */
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #10b981;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        /* FIX 03 — Project thumbnail */
+        .project-thumb {
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f0fafa;
+            border-bottom: 1px solid #e2f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stat-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #d1fae5;
+            color: #065f46;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 20px;
+            border: 1px solid #6ee7b7;
+        }
+        .project-learning {
+            font-size: 0.72rem;
+            color: #6b7280;
+            font-style: italic;
+            margin-top: 6px;
+            margin-bottom: 10px;
+            padding-left: 8px;
+            border-left: 2px solid #b2d8d8;
+            line-height: 1.5;
+        }
+        /* FIX 04 — Skill proficiency badge */
+        .skill-proficiency {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.62rem;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        .skill-proficiency.proficient {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .skill-proficiency.familiar {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        .skill-proficiency.learning {
+            background-color: #ede9fe;
+            color: #4c1d95;
+        }
+        .skill-context {
+            font-size: 0.75rem;
+            color: #6b7280;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 2px solid var(--accent);
+        }
+        .skill-item-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .skill-item-row:last-child { border-bottom: none; }
+        .skill-item-name {
+            font-size: 0.82rem;
+            color: #374151;
+            font-weight: 500;
+        }
+        /* FIX 05 — Contact link rows */
+        .contact-link-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: opacity 0.2s;
+            text-decoration: none;
+            color: #d1d5db;
+        }
+        .contact-link-row:hover { opacity: 0.8; }
+        .contact-link-row:last-child { border-bottom: none; }
+        .contact-icon-circle {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avail-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.78rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-family: 'DM Mono', monospace;
+            font-weight: 500;
+        }
+        /* FIX 06 — Blog card enhancements */
+        .blog-topic-tag {
+            display: inline-block;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 20px;
+            margin-right: 6px;
+        }
+        .blog-read-time {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            color: #9ca3af;
+        }
+        .blog-draft-badge {
+            display: inline-block;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #fef3c7;
+            color: #92400e;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+        /* FIX 07 — Timeline Present badge */
+        .present-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.7rem;
+            font-family: 'DM Mono', monospace;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .present-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #10b981;
+        }
+        /* Mini bar chart for project thumbnails */
+        .mini-chart { display: flex; align-items: flex-end; gap: 5px; height: 60px; padding: 0 16px; }
+        .mini-bar {
+            border-radius: 3px 3px 0 0;
+            background-color: var(--accent);
+            flex: 1;
+            transition: opacity 0.2s;
+        }
+        /* Scroll fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Nav active state */
+        .nav-link.active { color: var(--accent); }
     </style>
     <script>
         tailwind.config = {
@@ -39,7 +267,8 @@
                     },
                     fontFamily: {
                         'serif': ['Merriweather', 'serif'],
-                        'sans': ['Inter', 'sans-serif']
+                        'sans': ['Inter', 'sans-serif'],
+                        'mono': ['DM Mono', 'monospace']
                     }
                 }
             }
@@ -49,359 +278,686 @@
 <body class="bg-light-gray text-dark-gray">
 
     <!-- Header & Navigation -->
-    <header class="bg-light-gray/95 backdrop-blur-sm sticky top-0 z-50">
+    <header class="bg-light-gray/95 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-serif font-bold">
-                    <a href="#">Manvi Gawande</a>
+                <div class="text-xl font-serif font-bold">
+                    <a href="#" class="hover:text-accent transition-colors">Manvi Gawande</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#experience" class="hover:text-accent transition-colors duration-300">Experience</a>
-                    <a href="#projects" class="hover:text-accent transition-colors duration-300">Projects</a>
-                    <a href="#blogs" class="hover:text-accent transition-colors duration-300">Blogs</a>
-                    <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+                    <a href="#about" class="nav-link text-sm hover:text-accent transition-colors duration-300">About</a>
+                    <a href="#experience" class="nav-link text-sm hover:text-accent transition-colors duration-300">Experience</a>
+                    <a href="#projects" class="nav-link text-sm hover:text-accent transition-colors duration-300">Projects</a>
+                    <a href="#writing" class="nav-link text-sm hover:text-accent transition-colors duration-300">Writing</a>
+                    <a href="#skills" class="nav-link text-sm hover:text-accent transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="nav-link text-sm hover:text-accent transition-colors duration-300">Contact</a>
                 </nav>
-                 <div class="md:hidden">
+                <div class="md:hidden">
                     <button id="menu-btn" class="text-dark-gray focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
             </div>
-             <!-- Mobile Menu -->
+            <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">About</a>
                 <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Experience</a>
                 <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Projects</a>
-                <a href="#blogs" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Blogs</a>
+                <a href="#writing" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Writing</a>
+                <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Skills</a>
                 <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Contact</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-6 py-12">
-        <!-- Hero Section -->
-        <section id="hero" class="flex flex-col md:flex-row items-center my-12 md:my-24">
-            <div class="md:w-1/3 text-center mb-8 md:mb-0">
-                <img src="me.jpg" alt="Manvi Gawande" class="rounded-full w-48 h-48 md:w-64 md:h-64 mx-auto object-cover shadow-lg">
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- FIX 01 — Hero with About, Tags, CTAs       -->
+        <!-- ══════════════════════════════════════════ -->
+        <section id="about" class="flex flex-col md:flex-row items-center my-12 md:my-20 gap-12">
+            <div class="md:w-1/3 text-center">
+                <img src="me.jpg" alt="Manvi Gawande" class="rounded-full w-44 h-44 md:w-56 md:h-56 mx-auto object-cover shadow-lg border-4 border-white">
             </div>
-            <div class="md:w-2/3 md:pl-12">
-                <h1 class="text-4xl md:text-5xl font-bold font-serif mb-4">Manvi Gawande</h1>
-                <h2 class="text-xl md:text-2xl font-sans font-medium text-accent mb-4">Data Scientist | Master's Student at Indiana University</h2>
-                <p class="text-lg leading-relaxed mb-6">"Data Scientist specializing in NLP and Generative AI, dedicated to architecting systems that translate raw data into strategic insights"</p>
-                <div class="mt-8">
-                    <a href="./resume.pdf" target="_blank" class="inline-block accent-bg text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:opacity-90 transition-opacity duration-300">Open Resume</a>
+            <div class="md:w-2/3 fade-in">
+                <!-- Name & role -->
+                <h1 class="text-4xl md:text-5xl font-bold font-serif mb-2">Manvi Gawande</h1>
+                <h2 class="text-lg md:text-xl font-sans font-medium accent-color mb-5">Data Scientist · Master's Student at Indiana University</h2>
+
+                <!-- ✦ NEW: About paragraph -->
+                <p class="text-base leading-relaxed text-gray-600 mb-5 max-w-xl">
+                    I build NLP and Generative AI systems that turn messy, large-scale data into decisions. Currently conducting NLP research at IU's Soda Lab and building data pipelines for the ivory trade research project for Archivory Organization and open to full-time Data Science or MLE roles starting <strong>Summer 2026</strong>.
+                </p>
+
+                <!-- ✦ NEW: Specialty tags -->
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="specialty-tag">NLP</span>
+                    <span class="specialty-tag">Generative AI</span>
+                    <span class="specialty-tag">RAG Systems</span>
+                    <span class="specialty-tag">MLOps</span>
+                    <span class="specialty-tag available">
+                        <span class="pulse-dot"></span> Open to work
+                    </span>
                 </div>
-                <div class='flex gap-4 mt-4'>
-                  <a href='https://linkedin.com/in/manvi-gawande/' target='_blank' class='text-gray-600 hover:text-teal-700 transition-colors'>
-                    <svg class='h-6 w-6 fill-current' viewBox='0 0 24 24'><path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 21.227.792 22 1.771 22h20.451C23.2 22 24 21.227 24 20.451V1.729C24 .774 23.2 0 22.225 0z'/></svg>
-                  </a>
-                  
-                  <a href='https://github.com/Manvi234' target='_blank' class='text-gray-600 hover:text-teal-700 transition-colors'>
-                    <svg class='h-6 w-6 fill-current' viewBox='0 0 24 24'><path d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.419-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/></svg>
-                  </a>
 
-                  <a href='https://www.kaggle.com/manvigawande' target='_blank' class='text-gray-600 hover:text-teal-700 transition-colors'>
-                    <svg class='h-6 w-6 fill-current' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><title>Kaggle</title><path d='M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.352.352-.352h2.626c.236 0 .354.118.354.352v15.637l5.977-7.619c.141-.166.304-.249.492-.249h3.139c.164 0 .259.049.281.141.023.092-.012.164-.105.211l-6.236 7.616 6.341 7.456c.093.047.129.118.105.211z'/></svg>
-                  </a>
+                <!-- ✦ NEW: Dual CTAs -->
+                <div class="flex flex-wrap gap-3 mb-6">
+                    <a href="./resume.pdf" target="_blank" class="inline-flex items-center gap-2 accent-bg text-white font-semibold py-2.5 px-7 rounded-lg text-sm shadow hover:opacity-90 transition-opacity duration-300">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        View Resume
+                    </a>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-dark-gray font-semibold py-2.5 px-7 rounded-lg text-sm border border-gray-300 hover:border-accent hover:text-accent transition-colors duration-300">
+                        Get in touch
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
 
-                  <a href='mailto:manvig234@gmail.com' class='text-gray-600 hover:text-teal-700 transition-colors'>
-                    <svg class='h-6 w-6 fill-current' viewBox='0 0 24 24'><path d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/></svg>
-                  </a>
+                <!-- Social icons (kept from original, slightly styled) -->
+                <div class="flex gap-4">
+                    <a href="https://linkedin.com/in/manvi-gawande/" target="_blank" class="text-gray-400 hover:text-accent transition-colors" aria-label="LinkedIn">
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 21.227.792 22 1.771 22h20.451C23.2 22 24 21.227 24 20.451V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                    </a>
+                    <a href="https://github.com/Manvi234" target="_blank" class="text-gray-400 hover:text-accent transition-colors" aria-label="GitHub">
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.419-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    </a>
+                    <a href="https://www.kaggle.com/manvigawande" target="_blank" class="text-gray-400 hover:text-accent transition-colors" aria-label="Kaggle">
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.352.352-.352h2.626c.236 0 .354.118.354.352v15.637l5.977-7.619c.141-.166.304-.249.492-.249h3.139c.164 0 .259.049.281.141.023.092-.012.164-.105.211l-6.236 7.616 6.341 7.456c.093.047.129.118.105.211z"/></svg>
+                    </a>
+                    <a href="mailto:manvig234@gmail.com" class="text-gray-400 hover:text-accent transition-colors" aria-label="Email">
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="py-12">
-    <h2 class="text-3xl font-bold text-center font-serif mb-12">Experience</h2>
-    <div class="relative max-w-2xl mx-auto">
-        <div class="absolute left-1/2 -ml-0.5 w-1 bg-gray-200 h-full"></div>
+        <!-- ══════════════════════════════════════════ -->
+        <!-- FIX 07 — Experience with Present badges    -->
+        <!-- ══════════════════════════════════════════ -->
+        <section id="experience" class="py-16">
+            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Experience</h2>
+            <p class="text-center text-gray-500 text-sm mt-6 mb-12">Research & industry roles</p>
 
-        <div class="mb-8 flex justify-between items-center w-full right-timeline">
-            <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-accent shadow-xl w-8 h-8 rounded-full">
-                <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+            <div class="relative max-w-2xl mx-auto">
+                <div class="absolute left-1/2 -ml-0.5 w-0.5 bg-gray-200 h-full"></div>
+
+                <!-- Role 1 — FIX 07: Present badge -->
+                <div class="mb-10 flex justify-between items-start w-full fade-in">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 accent-bg shadow-md w-9 h-9 rounded-full flex-shrink-0">
+                        <span class="mx-auto font-mono text-sm text-white font-semibold">1</span>
+                    </div>
+                    <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
+                        <div class="flex items-center gap-2 flex-wrap mb-1">
+                            <p class="text-gray-400 text-xs font-mono">Jan 2026</p>
+                            <!-- ✦ NEW: Present badge -->
+                            <span class="present-badge"><span class="present-dot"></span>Present</span>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 leading-snug">Applied ML Research Analyst<br><span class="font-normal text-sm text-gray-500">Indiana University Bloomington</span></h3>
+                        <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
+                            <li> Engineered end-to-end web scraping pipelines to collect and preprocess ~75,000 multimodal records on ivory artifacts and trade, enabling structured
+analysis of large-scale, heterogeneous historical and transactional datasets.</li>
+<li>Developed recommendation systems and predictive models to identify patterns across complex ivory datasets; implemented a QWEN-powered RAG
+pipeline to streamline qualitative research workflows and accelerate domain-specific insight generation.
+</li>
+                           
+                        </ul>
+                        <!-- ✦ NEW: Impact line -->
+                        <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: architected full end-to-end data collection pipeline for an active research project.</p>
+                    </div>
+                </div>
+
+                <!-- Role 2 — FIX 07: Present badge -->
+                <div class="mb-10 flex justify-between flex-row-reverse items-start w-full fade-in">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 accent-bg shadow-md w-9 h-9 rounded-full flex-shrink-0">
+                        <span class="mx-auto text-white font-mono text-sm font-semibold">2</span>
+                    </div>
+                    <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
+                        <div class="flex items-center gap-2 flex-wrap mb-1">
+                            <p class="text-gray-400 text-xs font-mono">Sept 2025</p>
+                            <span class="present-badge"><span class="present-dot"></span>Present</span>
+                        </div>
+                        <h3 class="font-bold text-base mb-2 leading-snug">LLM Engineer<br><span class="font-normal text-sm text-gray-500">Soda Lab, IU</span></h3>
+                        <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
+                            <li>Analyzed 15 years of Reddit discourse (2008–2023) across 500K+ posts using LLMs and embedding models to detect belief formation patterns and
+behavioral shifts in online communities.</li>
+<li>Built an NLP pipeline leveraging transformer-based embeddings to identify and predict mental-health–related signals from large-scale social media data,
+surfacing statistically significant linguistic markers.</li>
+                          
+                        </ul>
+                        <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Focus: large-scale social NLP with 15+ years of Reddit data.</p>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="mb-10 flex justify-between items-start w-full fade-in">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-300 shadow-md w-9 h-9 rounded-full flex-shrink-0">
+                        <span class="mx-auto font-mono text-sm text-white font-semibold">3</span>
+                    </div>
+                    <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
+                        <p class="text-gray-400 text-xs font-mono mb-1">Nov 2022 – Feb 2023</p>
+                        <h3 class="font-bold text-base mb-2 leading-snug">Data Analyst Intern<br><span class="font-normal text-sm text-gray-500">S.K. Technovations</span></h3>
+                        <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
+                            <li>Performed EDA on 20,000+ rows using SQL for ETL to identify and streamline trends in customer behavior.</li>
+                            <li>Automated data quality workflows, cutting processing time by 30% and saving 8 hours weekly.</li>
+                        </ul>
+                        <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: saved 8 hrs/week through automated quality checks.</p>
+                    </div>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="mb-8 flex justify-between flex-row-reverse items-start w-full fade-in">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-gray-300 shadow-md w-9 h-9 rounded-full flex-shrink-0">
+                        <span class="mx-auto text-white font-mono text-sm font-semibold">4</span>
+                    </div>
+                    <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
+                        <p class="text-gray-400 text-xs font-mono mb-1">Aug 2022 – Oct 2022</p>
+                        <h3 class="font-bold text-base mb-2 leading-snug">Data Science Intern<br><span class="font-normal text-sm text-gray-500">Let's Grow More</span></h3>
+                        <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
+                            <li>Built a sales predictive model that increased accuracy by 13%, achieving an overall model accuracy of 91.75%.</li>
+                            <li>Created 15+ Tableau dashboards from 500K+ row datasets, influencing quarterly strategy and revenue tracking.</li>
+                        </ul>
+                        <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: 91.75% model accuracy, 15+ dashboards shipped.</p>
+                    </div>
+                </div>
             </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
-                <p class="text-gray-500 text-sm">Jan 2026 – Present</p>
-                <h3 class="font-bold text-lg mb-1">Research Fellow @ Indiana University Bloomington</h3>
-                <ul class="list-disc list-inside text-sm leading-snug tracking-wide text-gray-600">
-                    <li>Building web scraping pipelines to collect and preprocess ~75,000 multimodal records related to ivory artifacts and trade.</li>
-                    <li class="mt-2">Developing recommendation systems and predictive models to identify patterns and generate insights from large-scale, heterogeneous ivory datasets.</li>
-                </ul>
+        </section>
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- FIX 03 — Projects with thumbnails & badges -->
+        <!-- ══════════════════════════════════════════ -->
+        <section id="projects" class="py-16">
+            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Projects</h2>
+            <p class="text-center text-gray-500 text-sm mt-6 mb-12">Selected work across NLP, deep learning, analytics, and data engineering</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 — FinGuardAI -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+    <div class="project-thumb" style="background:#fafafa; flex-direction:column; gap:8px; padding:12px 16px; align-items:flex-start; justify-content:center;">
+        <!-- Transaction feed rows -->
+        <div style="display:flex;flex-direction:column;gap:4px;width:100%;">
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 8px;">
+                <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8821 · $142.00</span>
+                <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 6px;border-radius:10px;">✓ Safe</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:4px 8px;">
+                <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8822 · $4,899.00</span>
+                <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#991b1b;background:#fee2e2;padding:2px 6px;border-radius:10px;">⚑ Flagged</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 8px;">
+                <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8823 · $37.50</span>
+                <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 6px;border-radius:10px;">✓ Safe</span>
             </div>
         </div>
-
-        <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-            <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-accent shadow-xl w-8 h-8 rounded-full">
-                <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
-            </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
-                <p class="text-gray-500 text-sm">Sept 2025 – Present</p>
-                <h3 class="font-bold text-lg mb-1">Research Assistant @ Soda Lab</h3>
-                <ul class="list-disc list-inside text-sm leading-snug tracking-wide text-gray-600">
-                    <li>Conducting NLP research on Reddit discussions (2008–2023) to analyze belief formation and behavioral trends in online communities.</li>
-                    <li class="mt-2">Applying LLMs and embedding-based methods to model and predict mental-health–related signals from large-scale social data.</li>
-                </ul>
-            </div>
+        <!-- Strategy selector pills -->
+        <div style="display:flex;gap:5px;align-items:center;">
+            <span style="font-size:9px;color:#9ca3af;font-family:'DM Mono',monospace;">strategy:</span>
+            <span style="background:#2c7a7b;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;font-weight:500;">Thompson</span>
+            <span style="background:#f3f4f6;color:#6b7280;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;">Rule-based</span>
+            <span style="background:#f3f4f6;color:#6b7280;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;">LLM-only</span>
         </div>
-
-        <div class="mb-8 flex justify-between items-center w-full right-timeline">
-            <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-accent shadow-xl w-8 h-8 rounded-full">
-                <h1 class="mx-auto font-semibold text-lg text-white">3</h1>
-            </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
-                <p class="text-gray-500 text-sm">Nov 2022 – Feb 2023</p>
-                <h3 class="font-bold text-lg mb-1">Data Analyst Intern @ S.K. Technovations</h3>
-                <ul class="list-disc list-inside text-sm leading-snug tracking-wide text-gray-600">
-                    <li>Performed exploratory data analysis on a dataset of over 20,000 rows, utilizing SQL for data extraction, transformation, and loading (ETL) to identify and streamline trends in customer behavior.</li>
-                    <li class="mt-2">Automated data quality workflows, cutting processing time by 30% and saving 8 hours weekly.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-            <div class="order-1 w-5/12"></div>
-            <div class="z-20 flex items-center order-1 bg-accent shadow-xl w-8 h-8 rounded-full">
-                <h1 class="mx-auto text-white font-semibold text-lg">4</h1>
-            </div>
-            <div class="order-1 bg-white rounded-lg shadow-xl w-5/12 px-6 py-4">
-                <p class="text-gray-500 text-sm">Aug 2022 – Oct 2022</p>
-                <h3 class="font-bold text-lg mb-1">Data Science Intern @ Let’s Grow More</h3>
-                <ul class="list-disc list-inside text-sm leading-snug tracking-wide text-gray-600">
-                    <li>Built a sales predictive model that increased accuracy by 13%, achieving an overall model accuracy of 91.75%</li>
-                    <li class="mt-2">Created 15+ Tableau dashboards, delivering key insights from large-scale sales data (500K+ rows) that influenced quarterly strategy and improved revenue tracking. Used advanced Excel functions for preliminary data cleaning.</li>
-                </ul>
-            </div>
-        </div>
+        <span class="stat-badge">Multi-agent system</span>
     </div>
-</section>
+    <div class="p-5">
+        <h3 class="font-bold font-serif text-lg mb-2">FinGuardAI: Financial Safety Engine</h3>
+        <p class="text-gray-600 text-sm mb-2">An adaptive financial safety engine that analyzes transaction patterns and enhances security using LLMs and A/B testing.</p>
+        <p class="project-learning">Key insight: Thompson Sampling outperformed static rule sets by continuously optimising fraud detection strategies in production.</p>
+        <div class="mb-4 flex flex-wrap gap-1.5">
+            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">NLP</span>
+            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Machine Learning</span>
+        </div>
+        <a href="https://github.com/Manvi234/FinGuardAI" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+    </div>
+</div>
+               
+                <!-- Project 2 — Tula -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                    <div class="project-thumb" style="background: linear-gradient(135deg, #ede9fe 0%, #f0fafa 100%);">
+                        <!-- RAG pipeline mini visual -->
+                        <div style="display:flex;align-items:center;gap:6px;padding:0 20px;">
+                            <div style="background:#7c3aed;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">Resume</div>
+                            <div style="color:#9ca3af;font-size:12px;">→</div>
+                            <div style="background:#2c7a7b;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">RAG</div>
+                            <div style="color:#9ca3af;font-size:12px;">→</div>
+                            <div style="background:#7c3aed;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">Assessment</div>
+                        </div>
+                        <span class="stat-badge" style="background:#ede9fe;color:#4c1d95;border-color:#c4b5fd;">40% faster hiring</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold font-serif text-lg mb-2">Tula: AI-Driven Hiring Platform</h3>
+                        <p class="text-gray-600 text-sm mb-2">A multi-agent RAG platform that parses resumes and generates adaptive technical assessments. Reduced hiring time by 40%.</p>
+                        <p class="project-learning">Key insight: chunking strategy and metadata filtering in the vector store had more impact on assessment quality than model choice.</p>
+                        <div class="mb-4 flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">FastAPI</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Gemini AI</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">RAG</span>
+                        </div>
+                        <a href="https://github.com/TULA-AI/TULA" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project 3 — Pinterest -->
+<div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+    <div class="project-thumb" style="background:#fafafa; flex-direction:column; gap:10px; padding:12px 16px; align-items:flex-start; justify-content:center;">
+        <div style="display:flex; gap:5px; flex-wrap:wrap;">
+            <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ love</span>
+            <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ great</span>
+            <span style="background:#fee2e2;color:#991b1b;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">− crash</span>
+            <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ easy</span>
+            <span style="background:#fee2e2;color:#991b1b;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">− slow</span>
+            <span style="background:#f3f4f6;color:#6b7280;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">~ okay</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; width:100%;">
+            <div style="display:flex; flex-direction:column; gap:3px; flex:1;">
+                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">5★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:62%;height:100%;background:#10b981;border-radius:3px;"></div></div></div>
+                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">4★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:20%;height:100%;background:#86efac;border-radius:3px;"></div></div></div>
+                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">3★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:7%;height:100%;background:#d1d5db;border-radius:3px;"></div></div></div>
+                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">2★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:4%;height:100%;background:#fca5a5;border-radius:3px;"></div></div></div>
+                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">1★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:7%;height:100%;background:#ef4444;border-radius:3px;"></div></div></div>
+            </div>
+            <div style="text-align:center;border-left:1px solid #e5e7eb;padding-left:12px;">
+                <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#166534;">79.5%</div>
+                <div style="font-size:9px;color:#6b7280;margin-top:1px;">accuracy</div>
+            </div>
+        </div>
+        <span class="stat-badge" style="position:absolute;top:10px;right:10px;">50K+ reviews</span>
+    </div>
+    <div class="p-5">
+        <h3 class="font-bold font-serif text-lg mb-2">Pinterest App Review Analysis</h3>
+        <p class="text-gray-600 text-sm mb-2">Analyzed 50,000+ reviews using VADER sentiment analysis. Built a Random Forest model to predict star ratings from review text.</p>
+        <p class="project-learning">Key insight: negation handling in VADER preprocessing was the single biggest driver of accuracy improvement over the baseline.</p>
+        <div class="mb-4 flex flex-wrap gap-1.5">
+            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">NLTK</span>
+            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Scikit-learn</span>
+        </div>
+        <a href="https://github.com/Manvi234/Pinterest-App-Review-Analysis" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+    </div>
+</div>
+               
+                <!-- Project 4 — Wildlife -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                    <div class="project-thumb" style="background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);">
+                        <div style="display:flex;gap:20px;align-items:center;">
+                            <div style="text-align:center;">
+                                <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#065f46;">95.2%</div>
+                                <div style="font-size:9px;color:#6b7280;margin-top:2px;">InceptionV3</div>
+                            </div>
+                            <div style="width:1px;height:36px;background:#a7f3d0;"></div>
+                            <div style="text-align:center;">
+                                <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#2c7a7b;">88.7%</div>
+                                <div style="font-size:9px;color:#6b7280;margin-top:2px;">YOLO-NAS</div>
+                            </div>
+                        </div>
+                        <span class="stat-badge" style="background:#d1fae5;color:#065f46;border-color:#6ee7b7;">Live app</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold font-serif text-lg mb-2">Wildlife Conservation &amp; Analysis</h3>
+                        <p class="text-gray-600 text-sm mb-2">Interactive tool using InceptionV3 (95.23% accuracy) and YOLO-NAS (88.71%) for wildlife species classification, deployed live.</p>
+                        <p class="project-learning">Key insight: YOLO-NAS excelled at multi-animal frames while InceptionV3 was more reliable for single-subject close-ups.</p>
+                        <div class="mb-4 flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
+                        </div>
+                        <a href="https://Wildlife-conservation.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline text-sm">View live app &rarr;</a>
+                    </div>
+                </div>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-12">
-            <h2 class="text-3xl font-bold text-center font-serif mb-12">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">FinGuardAI: Financial Safety Engine</h3>
-                        <p class="text-gray-600 text-sm mb-4">An adaptive financial safety engine designed to analyze transaction patterns and enhance security measures.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">NLP</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Machine Learning</span>
+                <!-- Project 5 — Diabetes -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                    <div class="project-thumb" style="background: linear-gradient(135deg, #fce7f3 0%, #fdf4ff 100%);">
+                        <!-- Loss curve mini visual -->
+                        <svg width="140" height="60" viewBox="0 0 140 60" style="overflow:visible;">
+                            <polyline points="0,55 20,45 40,35 60,25 80,18 100,14 120,12 140,11" fill="none" stroke="#db2777" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="0,55 20,48 40,42 60,37 80,32 100,28 120,24 140,22" fill="none" stroke="#f9a8d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 3"/>
+                        </svg>
+                        <span class="stat-badge" style="background:#fce7f3;color:#9d174d;border-color:#f9a8d4;">88% accuracy</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold font-serif text-lg mb-2">Onset of Diabetes Detection</h3>
+                        <p class="text-gray-600 text-sm mb-2">Built a deep learning model achieving 88% test accuracy on clinical data, optimized with dropout layers and hyperparameter tuning.</p>
+                        <p class="project-learning">Key insight: dropout at 0.4 combined with batch norm reduced overfitting by ~12% vs the baseline architecture.</p>
+                        <div class="mb-4 flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Keras</span>
                         </div>
-                        <a href="https://github.com/Manvi234/FinGuardAI" target="_blank" class="font-semibold text-accent hover:underline">View Project &rarr;</a>
+                        <a href="https://github.com/Manvi234/Diabetes-Prediction" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">Tula: AI-Driven Hiring Platform</h3>
-                        <p class="text-gray-600 text-sm mb-4">A multi-agent RAG platform that parses resumes and generates adaptive technical assessments. Reduced hiring time by 40%.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">FastAPI</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Gemini AI</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">RAG</span>
+
+                <!-- Project 6 — A/B Testing -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                    <div class="project-thumb" style="background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);">
+                        <div style="display:flex;gap:16px;align-items:flex-end;padding:0 16px;">
+                            <div style="text-align:center;">
+                                <div style="width:36px;height:44px;background:#93c5fd;border-radius:4px 4px 0 0;"></div>
+                                <div style="font-size:9px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Control</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="width:36px;height:56px;background:#2563eb;border-radius:4px 4px 0 0;"></div>
+                                <div style="font-size:9px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Variant</div>
+                            </div>
                         </div>
-                        <a href="https://github.com/TULA-AI/TULA" target="_blank" class="font-semibold text-accent hover:underline">View Project &rarr;</a>
+                        <span class="stat-badge" style="background:#dbeafe;color:#1e3a8a;border-color:#93c5fd;">+13.4% lift</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold font-serif text-lg mb-2">Ad Bidding Optimisation (A/B Testing)</h3>
+                        <p class="text-gray-600 text-sm mb-2">Executed A/B testing on 100K user sessions. Achieved a 13.4% lift in purchases with 95% confidence intervals.</p>
+                        <p class="project-learning">Key insight: pre-stratification by user cohort reduced variance significantly and tightened confidence intervals without needing more data.</p>
+                        <div class="mb-4 flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Pandas</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Scipy</span>
+                        </div>
+                        <a href="https://github.com/Manvi234/AB-Testing-Optimizing-Ad-Bidding" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
                     </div>
                 </div>
-                <!-- Project 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">Pinterest App Review Analysis</h3>
-                        <p class="text-gray-600 text-sm mb-4">Analyzed 50,000+ reviews using VADER sentiment analysis. Built a Random Forest model (79.5% accuracy) to predict ratings from text.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">NLTK</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Scikit-learn</span>
+
+                <!-- Project 7 — E-Commerce -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                    <div class="project-thumb" style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);">
+                        <svg width="150" height="60" viewBox="0 0 150 60">
+                            <polyline points="0,50 25,45 50,48 75,30 100,35 112,15 125,20 150,25" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="112" cy="15" r="4" fill="#10b981"/>
+                        </svg>
+                        <span class="stat-badge">500K+ rows</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold font-serif text-lg mb-2">E-Commerce Customer Segmentation</h3>
+                        <p class="text-gray-600 text-sm mb-2">Analyzed 500K+ transactions to identify seasonal spikes and abnormal buying patterns, informing inventory strategy.</p>
+                        <p class="project-learning">Key insight: SQLite window functions enabled cohort retention analysis that would have required complex Python otherwise.</p>
+                        <div class="mb-4 flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">SQL</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
                         </div>
-                        <a href="https://github.com/Manvi234/Pinterest-App-Review-Analysis" target="_blank" class="font-semibold text-accent hover:underline">View Project &rarr;</a>
+                        <a href="https://github.com/Manvi234/Ecommerce_EDA_Using_SQLite" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
                     </div>
                 </div>
-                <!-- Project 4 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">Wildlife Conservation & Analysis (Live App)</h3>
-                        <p class="text-gray-600 text-sm mb-4">Developed an interactive tool using InceptionV3 (95.23% accuracy) and YOLO-NAS (88.71%) for wildlife classification.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">TensorFlow</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Streamlit</span>
+
+                <!-- Project 8 — Netflix -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                    <div class="project-thumb" style="background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);">
+                        <div style="display:flex;align-items:flex-end;gap:4px;padding:0 16px;">
+                            <div style="width:16px;height:50px;background:#ef4444;border-radius:3px 3px 0 0;"></div>
+                            <div style="width:16px;height:35px;background:#f97316;border-radius:3px 3px 0 0;"></div>
+                            <div style="width:16px;height:42px;background:#ef4444;border-radius:3px 3px 0 0;"></div>
+                            <div style="width:16px;height:28px;background:#f97316;border-radius:3px 3px 0 0;"></div>
+                            <div style="width:16px;height:20px;background:#fca5a5;border-radius:3px 3px 0 0;"></div>
+                            <div style="width:16px;height:15px;background:#fca5a5;border-radius:3px 3px 0 0;"></div>
                         </div>
-                        <a href="https://Wildlife-conservation.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline">View Live App &rarr;</a>
+                        <span class="stat-badge" style="background:#fef2f2;color:#991b1b;border-color:#fca5a5;">8K+ titles</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold font-serif text-lg mb-2">Netflix Content Dashboard</h3>
+                        <p class="text-gray-600 text-sm mb-2">Interactive Tableau dashboard analyzing 8K+ titles to visualize global content trends and genre popularity.</p>
+                        <p class="project-learning">Key insight: content additions accelerated post-2015 then plateaued in 2020, reflecting a shift from volume to quality strategy.</p>
+                        <div class="mb-4 flex flex-wrap gap-1.5">
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Tableau</span>
+                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                        </div>
+                        <a href="https://public.tableau.com/app/profile/manvi.gawande/viz/Netflix_17190483787180/NETFLIX" target="_blank" class="font-semibold text-accent hover:underline text-sm">View dashboard &rarr;</a>
                     </div>
                 </div>
-                <!-- Project 5 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">Onset of Diabetes Detection</h3>
-                        <p class="text-gray-600 text-sm mb-4">Built a deep learning model achieving 88% test accuracy on clinical data. Optimized architecture with dropout layers and hyperparameter tuning.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">TensorFlow</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Keras</span>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- FIX 06 — Writing & Insights (renamed)      -->
+        <!-- ══════════════════════════════════════════ -->
+        <section id="writing" class="py-16 bg-white -mx-6 px-6">
+            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Writing &amp; Insights</h2>
+            <p class="text-center text-gray-500 text-sm mt-6 mb-12">Technical walkthroughs, research notes, and project deep-dives</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Blog 1 — Published -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300 fade-in">
+                    <div class="h-2 accent-bg"></div>
+                    <div class="p-5">
+                        <!-- ✦ NEW: topic tag + read time -->
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="blog-topic-tag" style="background:#d1fae5;color:#065f46;">NLP</span>
+                            <span class="blog-topic-tag" style="background:#fee2e2;color:#991b1b;">Fraud Detection</span>
+                            <span class="blog-read-time">4 min read</span>
                         </div>
-                        <a href="https://github.com/Manvi234/Diabetes-Prediction" target="_blank" class="font-semibold text-accent hover:underline">View Project &rarr;</a>
+                        <h3 class="font-bold font-serif text-base mb-2 leading-snug">FinGuard AI: Adaptive, Explainable Fraud Detection with LLMs</h3>
+                        <p class="text-gray-500 text-xs mb-4 leading-relaxed">A multi-agent framework combining Thompson Sampling with LLM-based decision agents for continuous fraud strategy optimisation.</p>
+                        <a href="https://medium.com/@manvigawande234/finguard-ai-an-adaptive-explainable-fraud-detection-system-built-with-llms-e5766a284514" target="_blank" class="font-semibold text-accent hover:underline text-sm">Read on Medium &rarr;</a>
                     </div>
                 </div>
-                <!-- Project 6 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">Ad Bidding Optimization (A/B Testing)</h3>
-                        <p class="text-gray-600 text-sm mb-4">Executed A/B testing on 100K user sessions. Achieved a 13.4% lift in purchases and defined metrics with 95% confidence intervals.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Pandas</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Scipy</span>
+
+                <!-- ✦ NEW: Blog 2 placeholder (coming soon) -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300 fade-in">
+                    <div class="h-2 bg-purple-400"></div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="blog-topic-tag" style="background:#ede9fe;color:#4c1d95;">RAG</span>
+                            <span class="blog-topic-tag" style="background:#e0f2fe;color:#075985;">Multi-Agent</span>
+                            <span class="blog-read-time">7 min read</span>
+                            <span class="blog-draft-badge">Draft</span>
                         </div>
-                        <a href="https://github.com/Manvi234/AB-Testing-Optimizing-Ad-Bidding" target="_blank" class="font-semibold text-accent hover:underline">View Project &rarr;</a>
+                        <h3 class="font-bold font-serif text-base mb-2 leading-snug">Building TULA: A Multi-Agent RAG Hiring Platform</h3>
+                        <p class="text-gray-500 text-xs mb-4 leading-relaxed">How we built a resume-parsing RAG system that generates adaptive technical assessments and cut hiring time by 40%.</p>
+                        <a href="https://medium.com/@manvigawande234/building-tula-a-multi-agent-rag-hiring-platform-521d04668aa4" target="_blank" class="font-semibold text-accent hover:underline text-sm">Read on Medium &rarr;</a>
+                        
                     </div>
                 </div>
-                <!-- Project 7 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">E-Commerce Customer Segmentation</h3>
-                        <p class="text-gray-600 text-sm mb-4">Analyzed 500K+ transactions to identify seasonal spikes and abnormal buying patterns, informing inventory strategy.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">SQL</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
+
+                <!-- ✦ NEW: Blog 3 placeholder -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300 fade-in">
+                    <div class="h-2 bg-green-400"></div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="blog-topic-tag" style="background:#d1fae5;color:#065f46;">Computer Vision</span>
+                            <span class="blog-read-time">7 min read</span>
+                            <span class="blog-draft-badge">Draft</span>
                         </div>
-                        <a href="https://github.com/Manvi234/Ecommerce_EDA_Using_SQLite" target="_blank" class="font-semibold text-accent hover:underline">View Project &rarr;</a>
+                        <h3 class="font-bold font-serif text-base mb-2 leading-snug">InceptionV3 vs YOLO-NAS for Wildlife Classification</h3>
+                        <p class="text-gray-500 text-xs mb-4 leading-relaxed">A practical comparison of two architectures for multi-class wildlife classification, and lessons from deploying on Streamlit.</p>
+                         <a href="https://medium.com/@manvigawande234/inceptionv3-vs-yolo-nas-for-wildlife-classification-a-deep-dive-into-building-a-conservation-tool-b415c6b02f1a" target="_blank" class="font-semibold text-accent hover:underline text-sm">Read on Medium &rarr;</a>
+                        
+                      
                     </div>
                 </div>
-                <!-- Project 8 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">Netflix Content Dashboard</h3>
-                        <p class="text-gray-600 text-sm mb-4">Interactive dashboard analyzing 8K+ titles to visualize global content trends and genre popularity.</p>
-                        <div class="mb-4">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Tableau</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700 mr-2 mb-2">Python</span>
-                        </div>
-                        <a href="https://public.tableau.com/app/profile/manvi.gawande/viz/Netflix_17190483787180/NETFLIX" target="_blank" class="font-semibold text-accent hover:underline">View Dashboard &rarr;</a>
+
+            </div>
+            <!-- ✦ NEW: Medium link -->
+            <div class="text-center mt-8">
+                <a href="https://medium.com/@manvigawande234" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:underline">
+                    All posts on Medium
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- FIX 04 — Skills with context & proficiency -->
+        <!-- ══════════════════════════════════════════ -->
+        <section id="skills" class="py-16">
+            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Skills</h2>
+            <p class="text-center text-gray-500 text-sm mt-6 mb-12">Tools and technologies I use regularly across research and projects</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+
+                <!-- Machine Learning -->
+                <div class="bg-white rounded-xl shadow-md p-5 border border-gray-100 fade-in">
+                    <div class="flex items-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3" />
+                        </svg>
+                        <h3 class="text-base font-bold text-dark-gray">Machine Learning</h3>
+                    </div>
+                    <!-- ✦ NEW: Context sentence -->
+                    <p class="skill-context">I apply classical ML techniques for classification, regression, and NLP tasks  from EDA through model deployment.</p>
+                    <div class="space-y-1">
+                        <div class="skill-item-row"><span class="skill-item-name">Scikit-learn</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Pandas / NumPy</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">NLP (NLTK, spaCy)</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">RAG Pipelines</span><span class="skill-proficiency familiar">Familiar</span></div>
+                    </div>
+                </div>
+
+                <!-- Deep Learning -->
+                <div class="bg-white rounded-xl shadow-md p-5 border border-gray-100 fade-in">
+                    <div class="flex items-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        <h3 class="text-base font-bold text-dark-gray">Deep Learning</h3>
+                    </div>
+                    <p class="skill-context">I fine-tune transformer models and build DL architectures for NLP classification, image recognition, and LLM-based agents.</p>
+                    <div class="space-y-1">
+                        <div class="skill-item-row"><span class="skill-item-name">PyTorch</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">TensorFlow / Keras</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">HuggingFace</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">LLM Integration</span><span class="skill-proficiency familiar">Familiar</span></div>
+                    </div>
+                </div>
+
+                <!-- Data Engineering -->
+                <div class="bg-white rounded-xl shadow-md p-5 border border-gray-100 fade-in">
+                    <div class="flex items-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                        <h3 class="text-base font-bold text-dark-gray">Data Engineering</h3>
+                    </div>
+                    <p class="skill-context">I build ETL pipelines and data infrastructure for large-scale datasets  including web scraping and cloud storage workflows.</p>
+                    <div class="space-y-1">
+                        <div class="skill-item-row"><span class="skill-item-name">SQL & NoSQL</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Docker</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">AWS</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Bash / Linux</span><span class="skill-proficiency familiar">Familiar</span></div>
+                    </div>
+                </div>
+
+                <!-- Tools & Languages -->
+                <div class="bg-white rounded-xl shadow-md p-5 border border-gray-100 fade-in">
+                    <div class="flex items-center mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                        <h3 class="text-base font-bold text-dark-gray">Tools & Languages</h3>
+                    </div>
+                    <p class="skill-context">Day-to-day tools for analysis, visualisation, version control, and shipping projects from notebook to production.</p>
+                    <div class="space-y-1">
+                        <div class="skill-item-row"><span class="skill-item-name">Python & R</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Tableau / PowerBI</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Git & GitHub</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">FastAPI / Streamlit</span><span class="skill-proficiency familiar">Familiar</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Blogs Section -->
-        <section id="blogs" class="py-12 bg-white">
-            <h2 class="text-3xl font-bold text-center font-serif mb-12">Blogs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-                    <div class="p-6">
-                        <h3 class="font-bold font-serif text-xl mb-2">FinGuard AI: An Adaptive, Explainable Fraud Detection System Built with LLMs</h3>
-                        <p class="text-gray-600 text-sm mb-4">An adaptive, multi-agent fraud detection framework that continuously optimizes how fraud is detected and how decisions are explained. It combines continuous A/B testing with a Thompson Sampling-based multi-armed bandit approach to evaluate multiple strategies in parallel.</p>
-                        <a href="https://medium.com/@manvigawande234/finguard-ai-an-adaptive-explainable-fraud-detection-system-built-with-llms-e5766a284514" target="_blank" class="font-semibold text-accent hover:underline">Read More &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-12 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center font-serif mb-12">Skills</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Machine Learning Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16 8a4 4 0 11-8 0 4 4 0 018 0zM12 12a4 4 0 110-8 4 4 0 010 8z" />
-                            </svg>
-                            <h3 class="text-xl font-bold text-dark-gray">Machine Learning</h3>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Pandas</li>
-                            <li>Numpy</li>
-                            <li>Scikit-learn</li>
-                            <li>NLP</li>
-                            <li>RAG</li>
-                        </ul>
-                    </div>
-                    <!-- Deep Learning Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                            </svg>
-                            <h3 class="text-xl font-bold text-dark-gray">Deep Learning</h3>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>PyTorch</li>
-                            <li>TensorFlow</li>
-                            <li>LLMs</li>
-                            <li>HuggingFace</li>
-                        </ul>
-                    </div>
-                    <!-- Data Engineering Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="flex items-center">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2c7a7b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3">
-  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-  <path d="M3 5v14c0 1.66 4 3 9 3s 9-1.34 9-3V5"></path>
-</svg>
-                            <h3 class="text-xl font-bold text-dark-gray">Data Engineering</h3>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>SQL & NoSQL</li>
-                            <li>Bash</li>
-                            <li>Docker</li>
-                            <li>AWS</li>
-                        </ul>
-                    </div>
-                    <!-- Tools & Languages Card -->
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                            </svg>
-                            <h3 class="text-xl font-bold text-dark-gray">Tools & Languages</h3>
-                        </div>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Python & R</li>
-                            <li>Tableau & PowerBI</li>
-                            <li>Git & Linux</li>
-                            <li>MS-Excel</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-dark-gray text-white py-10">
-        <div class="container mx-auto px-6 text-center">
-            <p class="mb-4">Get in touch:</p>
-            <a href="mailto:manvig234@gmail.com" class="text-lg font-semibold link-underline hover:text-accent">manvig234@gmail.com</a>
-            <div class="flex items-center justify-center space-x-5 mt-6">
-                 <a href="https://linkedin.com/in/manvi-gawande/" target="_blank" class="hover:text-accent transition-colors duration-300">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+    <!-- ══════════════════════════════════════════ -->
+    <!-- FIX 05 — Contact: full section with CTA    -->
+    <!-- ══════════════════════════════════════════ -->
+    <footer id="contact" class="bg-dark-gray text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-3xl font-bold font-serif mb-3">Get in touch</h2>
+
+                <!-- ✦ NEW: Availability badge -->
+                <div class="flex justify-center mb-4">
+                    <span class="avail-badge">
+                        <span class="pulse-dot" style="background:#10b981;margin-right:6px;"></span>
+                        Open to full-time roles · available Summer 2026
+                    </span>
+                </div>
+
+                <!-- ✦ NEW: Personal note -->
+                <p class="text-gray-400 text-sm mb-10 leading-relaxed">
+                    I reply within 24 hours. Always happy to chat about data science, NLP research, potential collaborations, or anything in between.
+                </p>
+
+                <!-- ✦ NEW: All 4 links with icons -->
+                <div class="text-left max-w-xs mx-auto mb-10">
+                    <a href="mailto:manvig234@gmail.com" class="contact-link-row">
+                        <div class="contact-icon-circle">
+                            <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium text-gray-200">manvig234@gmail.com</div>
+                            <div class="text-xs text-gray-500">Email — best for opportunities</div>
+                        </div>
                     </a>
-                    <a href="https://github.com/Manvi234" target="_blank" class="hover:text-accent transition-colors duration-300">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <a href="https://linkedin.com/in/manvi-gawande/" target="_blank" class="contact-link-row">
+                        <div class="contact-icon-circle">
+                            <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 21.227.792 22 1.771 22h20.451C23.2 22 24 21.227 24 20.451V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium text-gray-200">linkedin.com/in/manvi-gawande</div>
+                            <div class="text-xs text-gray-500">LinkedIn</div>
+                        </div>
                     </a>
+                    <a href="https://github.com/Manvi234" target="_blank" class="contact-link-row">
+                        <div class="contact-icon-circle">
+                            <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.419-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium text-gray-200">github.com/Manvi234</div>
+                            <div class="text-xs text-gray-500">Code & projects</div>
+                        </div>
+                    </a>
+                    <a href="https://www.kaggle.com/manvigawande" target="_blank" class="contact-link-row">
+                        <div class="contact-icon-circle">
+                            <svg class="w-4 h-4 fill-current text-gray-300" viewBox="0 0 24 24"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.352.352-.352h2.626c.236 0 .354.118.354.352v15.637l5.977-7.619c.141-.166.304-.249.492-.249h3.139c.164 0 .259.049.281.141.023.092-.012.164-.105.211l-6.236 7.616 6.341 7.456c.093.047.129.118.105.211z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium text-gray-200">kaggle.com/manvigawande</div>
+                            <div class="text-xs text-gray-500">Competitions & notebooks</div>
+                        </div>
+                    </a>
+                </div>
+
+                <p class="text-xs text-gray-600">&copy; 2025 Manvi Gawande. All Rights Reserved.</p>
             </div>
-             <p class="text-xs text-gray-500 mt-8">&copy; 2025 Manvi Gawande. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Scroll fade-in observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Active nav highlight on scroll
+        const sections = document.querySelectorAll('section[id], footer[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+        sections.forEach(sec => scrollObserver.observe(sec));
     </script>
 
 </body>
