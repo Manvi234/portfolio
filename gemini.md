@@ -16,21 +16,22 @@ The tech stack must be: HTML, Tailwind CSS (via CDN), and Vanilla JavaScript.
 \# CONTENT: HEADER / HERO  
 \- \*\*Name:\*\* Manvi Gawande  
 \- \*\*Title:\*\* Data Scientist | Master's Student at Indiana University  
-\- \*\*Tagline:\*\* "Data Scientist specializing in NLP and Generative AI, dedicated to architecting systems that translate raw data into strategic insights"  
+\- \*\*Tagline:\*\* "Data Scientist and ML Engineer (MS, Indiana University, May 2026) specializing in production-grade GenAI and NLP systems that transform large-scale, multimodal data into high-impact decisions. From architecting multi-agent RAG pipelines to explainable fraud detection frameworks, I bridge the gap between complex research and scalable AI. Currently an LLM Engineer at the Soda Lab and Applied ML Researcher for the ArchIvory project, I am open to full-time Data Science or MLE roles starting Summer 2026."  
 \- \*\*Socials:\*\* \- LinkedIn: https://linkedin.com/in/manvi-gawande/  
   \- GitHub: https://github.com/Manvi234  
   \- Kaggle: https://www.kaggle.com/manvigawande  
   \- Email: manvig234@gmail.com
 
 \# CONTENT: EXPERIENCE (Timeline Style)  
-1\. \*\*Research Assistant @ Soda Lab\*\* (Sept 2025 – Present)  
-   \- Developing an LLM to analyze human behavioral patterns using belief embeddings.  
-2\. \*\*Data Analyst Intern @ S.K. Technovations\*\* (Nov 2022 – Feb 2023\) 
-   \-Performed exploratory data analysis on a dataset of over 20,000 rows, utilizing SQL for data extraction, transformation, and loading (ETL) to identify and streamline trends in customer behavior.
-   \- Automated data workflows using SQL, cutting processing time by 30%.  
-3\. \*\*Data Science Intern @ Let’s Grow More\*\* (Aug 2022 – Oct 2022\) 
-\- Built a sales predictive model that increased accuracy by 13%, achieving an overall model accuracy of 91.75%
-\- Created 15+ Tableau dashboards, delivering key insights from large-scale sales data (500K+ rows) that influenced quarterly strategy and improved revenue tracking.Used advanced Excel functions for preliminary data cleaning and trend analysis before dashboard design.
+**1**\. \*\*Applied ML Research Analyst @ Indiana University Bloomington\*\* (Jan 2026 – Present)  
+   \- Scraped and preprocessed **~75K** multimodal records on ivory trade for large-scale historical analysis.  
+   \- Built recommendation models and a QWEN-powered RAG pipeline to surface patterns in complex domain datasets.  
+**2**\. \*\*LLM Engineer @ Soda Lab, IU\*\* (Sept 2025 – Present)  
+   \- Analyzed **500K+** Reddit posts (**2008–2023**) with LLMs and embeddings to detect belief formation and behavioral shifts.  
+   \- Built a transformer-based NLP pipeline to identify mental-health signals from social media at scale.  
+**3**\. \*\*Data Science Intern @ Let’s Grow More\*\* (Aug 2022 – Oct 2022\) 
+\- Built a sales predictive model that increased accuracy by **13%**, achieving an overall model accuracy of **91.75%**
+\- Created **15+** Tableau dashboards, delivering key insights from large-scale sales data (**500K+** rows) that influenced quarterly strategy and improved revenue tracking.Used advanced Excel functions for preliminary data cleaning and trend analysis before dashboard design.
 
 
 \# CONTENT: PROJECTS (Grid Layout)  
