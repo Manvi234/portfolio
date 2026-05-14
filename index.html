@@ -288,7 +288,8 @@
                     <a href="#about" class="nav-link text-sm hover:text-accent transition-colors duration-300">About</a>
                     <a href="#experience" class="nav-link text-sm hover:text-accent transition-colors duration-300">Experience</a>
                     <a href="#projects" class="nav-link text-sm hover:text-accent transition-colors duration-300">Projects</a>
-                    <a href="#writing" class="nav-link text-sm hover:text-accent transition-colors duration-300">Writing</a>
+                    <a href="#extracurriculars" class="nav-link text-sm hover:text-accent transition-colors duration-300">Extras</a>
+                    <a href="#blogs" class="nav-link text-sm hover:text-accent transition-colors duration-300">Blogs</a>
                     <a href="#skills" class="nav-link text-sm hover:text-accent transition-colors duration-300">Skills</a>
                     <a href="#contact" class="nav-link text-sm hover:text-accent transition-colors duration-300">Contact</a>
                 </nav>
@@ -303,7 +304,8 @@
                 <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">About</a>
                 <a href="#experience" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Experience</a>
                 <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Projects</a>
-                <a href="#writing" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Writing</a>
+                <a href="#extracurriculars" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Extras</a>
+                <a href="#blogs" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Blogs</a>
                 <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Skills</a>
                 <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200 rounded">Contact</a>
             </div>
@@ -315,11 +317,12 @@
         <!-- ══════════════════════════════════════════ -->
         <!-- FIX 01 — Hero with About, Tags, CTAs       -->
         <!-- ══════════════════════════════════════════ -->
-        <section id="about" class="flex flex-col md:flex-row items-center my-12 md:my-20 gap-12">
-            <div class="md:w-1/3 text-center">
+        <section id="about" class="flex flex-col md:flex-row items-center my-12 md:my-20 gap-12 relative overflow-hidden">
+            <canvas id="neural-bg" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+            <div class="md:w-1/3 text-center relative z-10">
                 <img src="me.jpg" alt="Manvi Gawande" class="rounded-full w-44 h-44 md:w-56 md:h-56 mx-auto object-cover shadow-lg border-4 border-white">
             </div>
-            <div class="md:w-2/3 fade-in">
+            <div class="md:w-2/3 fade-in relative z-10">
                 <!-- Name & role -->
                 <h1 class="text-4xl md:text-5xl font-bold font-serif mb-2">Manvi Gawande</h1>
                 <h2 class="text-lg md:text-xl font-sans font-medium accent-color mb-5">Data Scientist · Master's Student at Indiana University</h2>
@@ -380,16 +383,15 @@
             <div class="relative max-w-2xl mx-auto">
                 <div class="absolute left-1/2 -ml-0.5 w-0.5 bg-gray-200 h-full"></div>
 
-                <!-- Role 1 — FIX 07: Present badge -->
+                <!-- Role 1 — numbered 4 (most recent) -->
                 <div class="mb-10 flex justify-between items-start w-full fade-in">
                     <div class="order-1 w-5/12"></div>
                     <div class="z-20 flex items-center order-1 accent-bg shadow-md w-9 h-9 rounded-full flex-shrink-0">
-                        <span class="mx-auto font-mono text-sm text-white font-semibold"><strong>1</strong></span>
+                        <span class="mx-auto font-mono text-sm text-white font-semibold">4</span>
                     </div>
                     <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
                         <div class="flex items-center gap-2 flex-wrap mb-1">
                             <p class="text-gray-400 text-xs font-mono">Jan 2026</p>
-                            <!-- ✦ NEW: Present badge -->
                             <span class="present-badge"><span class="present-dot"></span>Present</span>
                         </div>
                         <h3 class="font-bold text-base mb-2 leading-snug">Applied ML Research Analyst<br><span class="font-normal text-sm text-gray-500">Indiana University Bloomington</span></h3>
@@ -401,11 +403,11 @@
                     </div>
                 </div>
 
-                <!-- Role 2 — FIX 07: Present badge -->
+                <!-- Role 2 — numbered 3 -->
                 <div class="mb-10 flex justify-between flex-row-reverse items-start w-full fade-in">
                     <div class="order-1 w-5/12"></div>
                     <div class="z-20 flex items-center order-1 accent-bg shadow-md w-9 h-9 rounded-full flex-shrink-0">
-                        <span class="mx-auto text-white font-mono text-sm font-semibold"><strong>2</strong></span>
+                        <span class="mx-auto text-white font-mono text-sm font-semibold">3</span>
                     </div>
                     <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
                         <div class="flex items-center gap-2 flex-wrap mb-1">
@@ -421,288 +423,512 @@
                     </div>
                 </div>
 
-                <!-- Role 3 -->
-                <div class="mb-10 flex justify-between items-start w-full fade-in">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-300 shadow-md w-9 h-9 rounded-full flex-shrink-0">
-                        <span class="mx-auto font-mono text-sm text-white font-semibold"><strong>3</strong></span>
-                    </div>
-                    <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
-                        <p class="text-gray-400 text-xs font-mono mb-1">Nov 2022 – Feb 2023</p>
-                        <h3 class="font-bold text-base mb-2 leading-snug">Data Analyst Intern<br><span class="font-normal text-sm text-gray-500">S.K. Technovations</span></h3>
-                        <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
-                            <li>Performed EDA on <strong>20,000+</strong> rows using SQL for ETL to identify and streamline trends in customer behavior.</li>
-                            <li>Automated data quality workflows, cutting processing time by <strong>30%</strong> and saving <strong>8</strong> hours weekly.</li>
-                        </ul>
-                        <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: saved 8 hrs/week through automated quality checks.</p>
-                    </div>
+                <!-- Collapsed internships toggle -->
+                <div class="mb-4 flex justify-center w-full">
+                    <button id="internships-toggle" onclick="toggleInternships()" class="flex items-center gap-2 py-2 px-5 rounded-full border border-gray-300 text-gray-500 hover:border-accent hover:text-accent transition-colors duration-300 text-xs font-semibold">
+                        <svg id="internships-icon" class="w-3.5 h-3.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        Show earlier experience
+                    </button>
                 </div>
 
-                <!-- Role 4 -->
-                <div class="mb-8 flex justify-between flex-row-reverse items-start w-full fade-in">
-                    <div class="order-1 w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-300 shadow-md w-9 h-9 rounded-full flex-shrink-0">
-                        <span class="mx-auto text-white font-mono text-sm font-semibold"><strong>4</strong></span>
+                <!-- Roles 3 & 4 — collapsible internships -->
+                <div id="early-internships" class="hidden w-full">
+
+                    <!-- Role 3 — numbered 2 -->
+                    <div class="mb-10 flex justify-between items-start w-full fade-in">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-gray-300 shadow-md w-9 h-9 rounded-full flex-shrink-0">
+                            <span class="mx-auto font-mono text-sm text-white font-semibold">2</span>
+                        </div>
+                        <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
+                            <p class="text-gray-400 text-xs font-mono mb-1">Nov 2022 – Feb 2023</p>
+                            <h3 class="font-bold text-base mb-2 leading-snug">Data Analyst Intern<br><span class="font-normal text-sm text-gray-500">S.K. Technovations</span></h3>
+                            <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
+                                <li>Performed EDA on <strong>20,000+</strong> rows using SQL for ETL to identify and streamline trends in customer behavior.</li>
+                                <li>Automated data quality workflows, cutting processing time by <strong>30%</strong> and saving <strong>8</strong> hours weekly.</li>
+                            </ul>
+                            <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: saved 8 hrs/week through automated quality checks.</p>
+                        </div>
                     </div>
-                    <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
-                        <p class="text-gray-400 text-xs font-mono mb-1">Aug 2022 – Oct 2022</p>
-                        <h3 class="font-bold text-base mb-2 leading-snug">Data Science Intern<br><span class="font-normal text-sm text-gray-500">Let's Grow More</span></h3>
-                        <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
-                            <li>Built a sales predictive model that increased accuracy by <strong>13%</strong>, achieving an overall model accuracy of <strong>91.75%</strong>.</li>
-                            <li>Created <strong>15+</strong> Tableau dashboards from <strong>500K+</strong> row datasets, influencing quarterly strategy and revenue tracking.</li>
-                        </ul>
-                        <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: 91.75% model accuracy, 15+ dashboards shipped.</p>
+
+                    <!-- Role 4 — numbered 1 (oldest) -->
+                    <div class="mb-8 flex justify-between flex-row-reverse items-start w-full fade-in">
+                        <div class="order-1 w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-gray-300 shadow-md w-9 h-9 rounded-full flex-shrink-0">
+                            <span class="mx-auto text-white font-mono text-sm font-semibold">1</span>
+                        </div>
+                        <div class="order-1 bg-white rounded-xl shadow-md w-5/12 px-5 py-4 border border-gray-100">
+                            <p class="text-gray-400 text-xs font-mono mb-1">Aug 2022 – Oct 2022</p>
+                            <h3 class="font-bold text-base mb-2 leading-snug">Data Science Intern<br><span class="font-normal text-sm text-gray-500">Let's Grow More</span></h3>
+                            <ul class="list-disc list-inside text-xs leading-relaxed text-gray-600 space-y-1">
+                                <li>Built a sales predictive model that increased accuracy by <strong>13%</strong>, achieving an overall model accuracy of <strong>91.75%</strong>.</li>
+                                <li>Created <strong>15+</strong> Tableau dashboards from <strong>500K+</strong> row datasets, influencing quarterly strategy and revenue tracking.</li>
+                            </ul>
+                            <p class="mt-3 text-xs text-accent font-semibold border-t border-gray-100 pt-2">Top outcome: 91.75% model accuracy, 15+ dashboards shipped.</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- ══════════════════════════════════════════ -->
-        <!-- FIX 03 — Projects with thumbnails & badges -->
-        <!-- ══════════════════════════════════════════ -->
+        <!-- Projects Section -->
         <section id="projects" class="py-16">
             <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Projects</h2>
             <p class="text-center text-gray-500 text-sm mt-6 mb-12">Selected work across NLP, deep learning, analytics, and data engineering</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- 4 Main Resume Projects -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
                 <!-- Project 1 — FinGuardAI -->
-<div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-    <div class="project-thumb" style="background:#fafafa; flex-direction:column; gap:8px; padding:12px 16px; align-items:flex-start; justify-content:center;">
-        <!-- Transaction feed rows -->
-        <div style="display:flex;flex-direction:column;gap:4px;width:100%;">
-            <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 8px;">
-                <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8821 · $142.00</span>
-                <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 6px;border-radius:10px;">✓ Safe</span>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:4px 8px;">
-                <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8822 · $4,899.00</span>
-                <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#991b1b;background:#fee2e2;padding:2px 6px;border-radius:10px;">⚑ Flagged</span>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 8px;">
-                <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8823 · $37.50</span>
-                <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 6px;border-radius:10px;">✓ Safe</span>
-            </div>
-        </div>
-        <!-- Strategy selector pills -->
-        <div style="display:flex;gap:5px;align-items:center;">
-            <span style="font-size:9px;color:#9ca3af;font-family:'DM Mono',monospace;">strategy:</span>
-            <span style="background:#2c7a7b;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;font-weight:500;">Thompson</span>
-            <span style="background:#f3f4f6;color:#6b7280;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;">Rule-based</span>
-            <span style="background:#f3f4f6;color:#6b7280;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;">LLM-only</span>
-        </div>
-        <span class="stat-badge">Multi-agent system</span>
-    </div>
-    <div class="p-5">
-        <h3 class="font-bold font-serif text-lg mb-2">FinGuardAI: Financial Safety Engine</h3>
-        <p class="text-gray-600 text-sm mb-2">An adaptive financial safety engine that analyzes transaction patterns and enhances security using LLMs and A/B testing.</p>
-        <p class="project-learning">Key insight: Thompson Sampling outperformed static rule sets by continuously optimising fraud detection strategies in production.</p>
-        <div class="mb-4 flex flex-wrap gap-1.5">
-            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">NLP</span>
-            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Machine Learning</span>
-        </div>
-        <a href="https://github.com/Manvi234/FinGuardAI" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
-    </div>
-</div>
-               
-                <!-- Project 2 — Tula -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-                    <div class="project-thumb" style="background: linear-gradient(135deg, #ede9fe 0%, #f0fafa 100%);">
-                        <!-- RAG pipeline mini visual -->
-                        <div style="display:flex;align-items:center;gap:6px;padding:0 20px;">
-                            <div style="background:#7c3aed;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">Resume</div>
-                            <div style="color:#9ca3af;font-size:12px;">→</div>
-                            <div style="background:#2c7a7b;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">RAG</div>
-                            <div style="color:#9ca3af;font-size:12px;">→</div>
-                            <div style="background:#7c3aed;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">Assessment</div>
-                        </div>
-                        <span class="stat-badge" style="background:#ede9fe;color:#4c1d95;border-color:#c4b5fd;">40% faster hiring</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold font-serif text-lg mb-2">Tula: AI-Driven Hiring Platform</h3>
-                        <p class="text-gray-600 text-sm mb-2">A multi-agent RAG platform that parses resumes and generates adaptive technical assessments. Reduced hiring time by 40%.</p>
-                        <p class="project-learning">Key insight: chunking strategy and metadata filtering in the vector store had more impact on assessment quality than model choice.</p>
-                        <div class="mb-4 flex flex-wrap gap-1.5">
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">FastAPI</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Gemini AI</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">RAG</span>
-                        </div>
-                        <a href="https://github.com/TULA-AI/TULA" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
-                    </div>
-                </div>
-                <!-- Project 3 — Pinterest -->
-<div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-    <div class="project-thumb" style="background:#fafafa; flex-direction:column; gap:10px; padding:12px 16px; align-items:flex-start; justify-content:center;">
-        <div style="display:flex; gap:5px; flex-wrap:wrap;">
-            <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ love</span>
-            <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ great</span>
-            <span style="background:#fee2e2;color:#991b1b;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">− crash</span>
-            <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ easy</span>
-            <span style="background:#fee2e2;color:#991b1b;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">− slow</span>
-            <span style="background:#f3f4f6;color:#6b7280;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">~ okay</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; width:100%;">
-            <div style="display:flex; flex-direction:column; gap:3px; flex:1;">
-                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">5★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:62%;height:100%;background:#10b981;border-radius:3px;"></div></div></div>
-                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">4★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:20%;height:100%;background:#86efac;border-radius:3px;"></div></div></div>
-                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">3★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:7%;height:100%;background:#d1d5db;border-radius:3px;"></div></div></div>
-                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">2★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:4%;height:100%;background:#fca5a5;border-radius:3px;"></div></div></div>
-                <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">1★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:7%;height:100%;background:#ef4444;border-radius:3px;"></div></div></div>
-            </div>
-            <div style="text-align:center;border-left:1px solid #e5e7eb;padding-left:12px;">
-                <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#166534;">79.5%</div>
-                <div style="font-size:9px;color:#6b7280;margin-top:1px;">accuracy</div>
-            </div>
-        </div>
-        <span class="stat-badge" style="position:absolute;top:10px;right:10px;">50K+ reviews</span>
-    </div>
-    <div class="p-5">
-        <h3 class="font-bold font-serif text-lg mb-2">Pinterest App Review Analysis</h3>
-        <p class="text-gray-600 text-sm mb-2">Analyzed 50,000+ reviews using VADER sentiment analysis. Built a Random Forest model to predict star ratings from review text.</p>
-        <p class="project-learning">Key insight: negation handling in VADER preprocessing was the single biggest driver of accuracy improvement over the baseline.</p>
-        <div class="mb-4 flex flex-wrap gap-1.5">
-            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">NLTK</span>
-            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Scikit-learn</span>
-        </div>
-        <a href="https://github.com/Manvi234/Pinterest-App-Review-Analysis" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
-    </div>
-</div>
-               
-                <!-- Project 4 — Wildlife -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-                    <div class="project-thumb" style="background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);">
-                        <div style="display:flex;gap:20px;align-items:center;">
-                            <div style="text-align:center;">
-                                <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#065f46;">95.2%</div>
-                                <div style="font-size:9px;color:#6b7280;margin-top:2px;">InceptionV3</div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in border border-gray-100 flex flex-col hover:shadow-lg transition-shadow duration-300">
+                    <!-- Left: panel + info -->
+                    <div class="flex flex-col w-full">
+                        <div class="project-thumb" style="background:#fafafa; flex-direction:column; gap:8px; padding:12px 16px; align-items:flex-start; justify-content:center;">
+                            <div style="display:flex;flex-direction:column;gap:4px;width:100%;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 8px;">
+                                    <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8821 · $142.00</span>
+                                    <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 6px;border-radius:10px;">✓ Safe</span>
+                                </div>
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:4px 8px;">
+                                    <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8822 · $4,899.00</span>
+                                    <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#991b1b;background:#fee2e2;padding:2px 6px;border-radius:10px;">⚑ Flagged</span>
+                                </div>
+                                <div style="display:flex;align-items:center;justify-content:space-between;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 8px;">
+                                    <span style="font-family:'DM Mono',monospace;font-size:9px;color:#374151;">txn_8823 · $37.50</span>
+                                    <span style="font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:#166534;background:#dcfce7;padding:2px 6px;border-radius:10px;">✓ Safe</span>
+                                </div>
                             </div>
-                            <div style="width:1px;height:36px;background:#a7f3d0;"></div>
-                            <div style="text-align:center;">
-                                <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#2c7a7b;">88.7%</div>
-                                <div style="font-size:9px;color:#6b7280;margin-top:2px;">YOLO-NAS</div>
+                            <div style="display:flex;gap:5px;align-items:center;">
+                                <span style="font-size:9px;color:#9ca3af;font-family:'DM Mono',monospace;">strategy:</span>
+                                <span style="background:#2c7a7b;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;font-weight:500;">Thompson</span>
+                                <span style="background:#f3f4f6;color:#6b7280;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;">Rule-based</span>
+                                <span style="background:#f3f4f6;color:#6b7280;font-size:9px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:20px;">LLM-only</span>
                             </div>
+                            <span class="stat-badge">20% fewer false positives</span>
                         </div>
-                        <span class="stat-badge" style="background:#d1fae5;color:#065f46;border-color:#6ee7b7;">Live app</span>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold font-serif text-lg mb-2">FinGuard AI: Adaptive Fraud Detection</h3>
+                            <p class="text-gray-600 text-sm mb-2">Multi-agent fraud detection framework using Thompson Sampling across 4 strategy pairs, converging to dominant strategies within ~1–2k transactions without offline retraining.</p>
+                            <p class="project-learning">8–15% precision improvement and ~20% reduction in false positives over LLM-only baselines, with 100% auditable RAG-grounded explanations.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">LLaMA 3.1</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">RAG</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Multi-Agent</span>
+                            </div>
+                            <a href="https://github.com/Manvi234/FinGuardAI" target="_blank" class="font-semibold text-accent hover:underline text-sm mt-auto">View code &rarr;</a>
+                        </div>
                     </div>
-                    <div class="p-5">
-                        <h3 class="font-bold font-serif text-lg mb-2">Wildlife Conservation &amp; Analysis</h3>
-                        <p class="text-gray-600 text-sm mb-2">Interactive tool using InceptionV3 (95.23% accuracy) and YOLO-NAS (88.71%) for wildlife species classification, deployed live.</p>
-                        <p class="project-learning">Key insight: YOLO-NAS excelled at multi-animal frames while InceptionV3 was more reliable for single-subject close-ups.</p>
-                        <div class="mb-4 flex flex-wrap gap-1.5">
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
-                        </div>
-                        <a href="https://Wildlife-conservation.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline text-sm">View live app &rarr;</a>
+                    <!-- Right: video -->
+                    <div class="w-full bg-gray-50 flex items-center justify-center border-t border-gray-100 overflow-hidden" style="min-height:220px;">
+                        <video autoplay muted loop playsinline class="w-full h-full object-contain p-3" style="max-height:340px;">
+                            <source src="finguard.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
-                <!-- Project 5 — Diabetes -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-                    <div class="project-thumb" style="background: linear-gradient(135deg, #fce7f3 0%, #fdf4ff 100%);">
-                        <!-- Loss curve mini visual -->
-                        <svg width="140" height="60" viewBox="0 0 140 60" style="overflow:visible;">
-                            <polyline points="0,55 20,45 40,35 60,25 80,18 100,14 120,12 140,11" fill="none" stroke="#db2777" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="0,55 20,48 40,42 60,37 80,32 100,28 120,24 140,22" fill="none" stroke="#f9a8d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 3"/>
-                        </svg>
-                        <span class="stat-badge" style="background:#fce7f3;color:#9d174d;border-color:#f9a8d4;">88% accuracy</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold font-serif text-lg mb-2">Onset of Diabetes Detection</h3>
-                        <p class="text-gray-600 text-sm mb-2">Built a deep learning model achieving 88% test accuracy on clinical data, optimized with dropout layers and hyperparameter tuning.</p>
-                        <p class="project-learning">Key insight: dropout at 0.4 combined with batch norm reduced overfitting by ~12% vs the baseline architecture.</p>
-                        <div class="mb-4 flex flex-wrap gap-1.5">
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Keras</span>
-                        </div>
-                        <a href="https://github.com/Manvi234/Diabetes-Prediction" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 6 — A/B Testing -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-                    <div class="project-thumb" style="background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);">
-                        <div style="display:flex;gap:16px;align-items:flex-end;padding:0 16px;">
-                            <div style="text-align:center;">
-                                <div style="width:36px;height:44px;background:#93c5fd;border-radius:4px 4px 0 0;"></div>
-                                <div style="font-size:9px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Control</div>
+                <!-- Project 2 — Energy Forecasting -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in border border-gray-100 flex flex-col hover:shadow-lg transition-shadow duration-300">
+                    <!-- Left: panel + info -->
+                    <div class="flex flex-col w-full">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #fef9c3 0%, #fefce8 100%);">
+                            <div style="display:flex;flex-direction:column;gap:6px;width:100%;padding:10px 16px;">
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:52px;">LSTM</span>
+                                    <div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:92%;height:100%;background:#2c7a7b;border-radius:3px;"></div></div>
+                                    <span style="font-size:9px;font-family:'DM Mono',monospace;color:#2c7a7b;font-weight:600;">22.3%</span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:52px;">XGBoost</span>
+                                    <div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:78%;height:100%;background:#a3e635;border-radius:3px;"></div></div>
+                                    <span style="font-size:9px;font-family:'DM Mono',monospace;color:#4b5563;">31.4%</span>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:52px;">Baseline</span>
+                                    <div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:40%;height:100%;background:#fca5a5;border-radius:3px;"></div></div>
+                                    <span style="font-size:9px;font-family:'DM Mono',monospace;color:#9ca3af;">153%</span>
+                                </div>
                             </div>
-                            <div style="text-align:center;">
-                                <div style="width:36px;height:56px;background:#2563eb;border-radius:4px 4px 0 0;"></div>
-                                <div style="font-size:9px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Variant</div>
+                            <span class="stat-badge" style="background:#fef9c3;color:#713f12;border-color:#fde047;">MAPE benchmark</span>
+                        </div>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold font-serif text-lg mb-2">Multi-Model Energy Forecasting</h3>
+                            <p class="text-gray-600 text-sm mb-2">Engineered 50+ temporal and weather features for 19K+ records. Optimized an ML stack (XGBoost, LightGBM, LSTM) via Optuna, slashing MAPE from 153% to 22.3%.</p>
+                            <p class="project-learning">18% MAPE improvement over statistical baselines; deployed a Streamlit dashboard with real-time forecast visualization.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">PyTorch</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">XGBoost</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Optuna</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
+                            </div>
+                            <div class="flex gap-4 mt-auto">
+                                <a href="https://github.com/Manvi234/Energy_Usage_Forecast" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                                <a href="https://energyusageforecast.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline text-sm">Live app &rarr;</a>
                             </div>
                         </div>
-                        <span class="stat-badge" style="background:#dbeafe;color:#1e3a8a;border-color:#93c5fd;">+13.4% lift</span>
                     </div>
-                    <div class="p-5">
-                        <h3 class="font-bold font-serif text-lg mb-2">Ad Bidding Optimisation (A/B Testing)</h3>
-                        <p class="text-gray-600 text-sm mb-2">Executed A/B testing on 100K user sessions. Achieved a 13.4% lift in purchases with 95% confidence intervals.</p>
-                        <p class="project-learning">Key insight: pre-stratification by user cohort reduced variance significantly and tightened confidence intervals without needing more data.</p>
-                        <div class="mb-4 flex flex-wrap gap-1.5">
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Pandas</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Scipy</span>
-                        </div>
-                        <a href="https://github.com/Manvi234/AB-Testing-Optimizing-Ad-Bidding" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                    <!-- Right: GIF -->
+                    <div class="w-full bg-gray-50 flex items-center justify-center border-t border-gray-100 overflow-hidden" style="min-height:220px;">
+                        <img src="energy.gif" alt="Energy Forecasting demo" class="w-full h-full object-contain p-3" style="max-height:340px;">
                     </div>
                 </div>
 
-                <!-- Project 7 — E-Commerce -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-                    <div class="project-thumb" style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);">
-                        <svg width="150" height="60" viewBox="0 0 150 60">
-                            <polyline points="0,50 25,45 50,48 75,30 100,35 112,15 125,20 150,25" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="112" cy="15" r="4" fill="#10b981"/>
-                        </svg>
-                        <span class="stat-badge">500K+ rows</span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-bold font-serif text-lg mb-2">E-Commerce Customer Segmentation</h3>
-                        <p class="text-gray-600 text-sm mb-2">Analyzed 500K+ transactions to identify seasonal spikes and abnormal buying patterns, informing inventory strategy.</p>
-                        <p class="project-learning">Key insight: SQLite window functions enabled cohort retention analysis that would have required complex Python otherwise.</p>
-                        <div class="mb-4 flex flex-wrap gap-1.5">
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">SQL</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                <!-- Project 3 — E-Commerce RFM -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in border border-gray-100 flex flex-col hover:shadow-lg transition-shadow duration-300">
+                    <!-- Left: panel + info -->
+                    <div class="flex flex-col w-full">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);">
+                            <div style="display:flex;gap:5px;padding:0 12px;align-items:flex-end;">
+                                <div style="text-align:center;">
+                                    <div style="width:22px;height:48px;background:#2c7a7b;border-radius:3px 3px 0 0;"></div>
+                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Champions</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:22px;height:36px;background:#34d399;border-radius:3px 3px 0 0;"></div>
+                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Loyal</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:22px;height:28px;background:#86efac;border-radius:3px 3px 0 0;"></div>
+                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">At Risk</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:22px;height:20px;background:#bbf7d0;border-radius:3px 3px 0 0;"></div>
+                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">New</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:22px;height:14px;background:#d1fae5;border-radius:3px 3px 0 0;"></div>
+                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Dormant</div>
+                                </div>
+                            </div>
+                            <span class="stat-badge">96K+ customers</span>
                         </div>
-                        <a href="https://github.com/Manvi234/Ecommerce_EDA_Using_SQLite" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold font-serif text-lg mb-2">E-Commerce Segmentation &amp; RFM Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-2">SQL-based pipeline for 100K+ records with RFM model segmenting 96K+ customers into 5 personas. Full-stack BI suite via Tableau and Streamlit.</p>
+                            <p class="project-learning">Established an A/B testing framework for personalized retention campaigns across behavioral customer segments.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">SQL</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Tableau</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
+                            </div>
+                            <div class="flex gap-4 mt-auto">
+                                <a href="https://github.com/Manvi234/Customer-Segmentation-RFM-Analysis" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                                <a href="https://customer-segmentation-rfm-analysis.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline text-sm">Live app &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right: GIF -->
+                    <div class="w-full bg-gray-50 flex items-center justify-center border-t border-gray-100 overflow-hidden" style="min-height:220px;">
+                        <img src="crm.gif" alt="CRM RFM demo" class="w-full h-full object-contain p-3" style="max-height:340px;">
                     </div>
                 </div>
 
-                <!-- Project 8 — Netflix -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
-                    <div class="project-thumb" style="background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);">
-                        <div style="display:flex;align-items:flex-end;gap:4px;padding:0 16px;">
-                            <div style="width:16px;height:50px;background:#ef4444;border-radius:3px 3px 0 0;"></div>
-                            <div style="width:16px;height:35px;background:#f97316;border-radius:3px 3px 0 0;"></div>
-                            <div style="width:16px;height:42px;background:#ef4444;border-radius:3px 3px 0 0;"></div>
-                            <div style="width:16px;height:28px;background:#f97316;border-radius:3px 3px 0 0;"></div>
-                            <div style="width:16px;height:20px;background:#fca5a5;border-radius:3px 3px 0 0;"></div>
-                            <div style="width:16px;height:15px;background:#fca5a5;border-radius:3px 3px 0 0;"></div>
+                <!-- Project 4 — Fash.io -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in border border-gray-100 flex flex-col hover:shadow-lg transition-shadow duration-300">
+                    <!-- Left: panel + info -->
+                    <div class="flex flex-col w-full">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #e6f4f4 0%, #f0fafa 100%); flex-direction:column; gap:8px; padding:14px 16px; align-items:flex-start; justify-content:center;">
+                            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px;">
+                                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                                    <div style="display:flex;align-items:center;gap:5px;">
+                                        <div style="background:#2c7a7b;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">CLIP ViT-B/32</div>
+                                        <div style="font-size:8px;color:#6b7280;">→</div>
+                                        <div style="background:#0d9488;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">FAISS</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:5px;">
+                                        <div style="background:#1a5c5d;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">Moondream2</div>
+                                        <div style="font-size:8px;color:#6b7280;">→</div>
+                                        <div style="background:#e6f4f4;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:#1a5c5d;border:1px solid #b2d8d8;font-weight:600;">ONNX</div>
+                                    </div>
+                                </div>
+                                <div style="border-left:1px solid #b2d8d8;padding-left:10px;display:flex;flex-direction:column;gap:3px;text-align:right;">
+                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#2c7a7b;">88.2%</div>
+                                    <div style="font-size:8px;color:#6b7280;">Top-1 Acc.</div>
+                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#1a5c5d;margin-top:2px;">1.82×</div>
+                                    <div style="font-size:8px;color:#6b7280;">CPU speedup</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                                <span style="background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">P99 &lt; 100ms</span>
+                                <span style="background:#e6f4f4;color:#1a5c5d;border:1px solid #b2d8d8;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">56% mem ↓</span>
+                                <span style="background:#e6f4f4;color:#2c7a7b;border:1px solid #b2d8d8;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">90 classes</span>
+                            </div>
                         </div>
-                        <span class="stat-badge" style="background:#fef2f2;color:#991b1b;border-color:#fca5a5;">8K+ titles</span>
+                        <div class="p-5 flex flex-col flex-1">
+                            <h3 class="font-bold font-serif text-lg mb-2">Fash.io: Multimodal Fashion AI</h3>
+                            <p class="text-gray-600 text-sm mb-2">Multimodal AI system using fine-tuned CLIP (ViT-B/32) and Moondream2 VLM for e-commerce catalog ingestion and visual search across 90 product classes — 88.2% Top-1 accuracy, ROUGE-L 0.678.</p>
+                            <p class="project-learning">Two-stage pipeline (CLIP retrieval + VLM generation) with ONNX optimization (1.82× speedup), sub-5ms FAISS search, 56% memory reduction (813MB → 351MB), and 50% R@1 gain via contrastive fine-tuning.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">PyTorch</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">CLIP</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">FAISS</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">ONNX</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Moondream2</span>
+                            </div>
+                            <div class="flex gap-4 mt-auto">
+                                <a href="https://github.com/Vis-3/FASH.io/tree/master" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                                <a href="https://huggingface.co/spaces/Sanskar1120/fash-io-dashboard" target="_blank" class="font-semibold text-accent hover:underline text-sm">Live app &rarr;</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-5">
-                        <h3 class="font-bold font-serif text-lg mb-2">Netflix Content Dashboard</h3>
-                        <p class="text-gray-600 text-sm mb-2">Interactive Tableau dashboard analyzing 8K+ titles to visualize global content trends and genre popularity.</p>
-                        <p class="project-learning">Key insight: content additions accelerated post-2015 then plateaued in 2020, reflecting a shift from volume to quality strategy.</p>
-                        <div class="mb-4 flex flex-wrap gap-1.5">
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Tableau</span>
-                            <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                    <!-- Right: GIF -->
+                    <div class="w-full bg-gray-50 flex items-center justify-center border-t border-gray-100 overflow-hidden" style="min-height:220px;">
+                        <img src="FASH.io.gif" alt="Fash.io demo" class="w-full h-full object-contain p-3" style="max-height:340px;">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Explore More / My Journey -->
+            <div class="mt-12 max-w-4xl mx-auto">
+                <button id="explore-toggle" onclick="toggleExplore()" class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-xl border-2 border-dashed border-gray-300 text-gray-500 hover:border-accent hover:text-accent transition-colors duration-300 font-semibold text-sm">
+                    <svg id="explore-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    Explore more · My journey
+                </button>
+                <div id="explore-more" class="hidden mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Tula -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #ede9fe 0%, #f0fafa 100%);">
+                            <div style="display:flex;align-items:center;gap:6px;padding:0 20px;">
+                                <div style="background:#7c3aed;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">Resume</div>
+                                <div style="color:#9ca3af;font-size:12px;">→</div>
+                                <div style="background:#2c7a7b;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">RAG</div>
+                                <div style="color:#9ca3af;font-size:12px;">→</div>
+                                <div style="background:#7c3aed;color:white;font-size:9px;font-family:'DM Mono',monospace;padding:5px 8px;border-radius:6px;font-weight:500;">Assessment</div>
+                            </div>
+                            <span class="stat-badge" style="background:#ede9fe;color:#4c1d95;border-color:#c4b5fd;">40% faster hiring</span>
                         </div>
-                        <a href="https://public.tableau.com/app/profile/manvi.gawande/viz/Netflix_17190483787180/NETFLIX" target="_blank" class="font-semibold text-accent hover:underline text-sm">View dashboard &rarr;</a>
+                        <div class="p-5">
+                            <h3 class="font-bold font-serif text-lg mb-2">Tula: AI-Driven Hiring Platform</h3>
+                            <p class="text-gray-600 text-sm mb-2">A multi-agent RAG platform that parses resumes and generates adaptive technical assessments. Reduced hiring time by 40%.</p>
+                            <p class="project-learning">Key insight: chunking strategy and metadata filtering in the vector store had more impact on assessment quality than model choice.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">FastAPI</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Gemini AI</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">RAG</span>
+                            </div>
+                            <a href="https://github.com/TULA-AI/TULA" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Pinterest -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                        <div class="project-thumb" style="background:#fafafa; flex-direction:column; gap:10px; padding:12px 16px; align-items:flex-start; justify-content:center;">
+                            <div style="display:flex; gap:5px; flex-wrap:wrap;">
+                                <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ love</span>
+                                <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ great</span>
+                                <span style="background:#fee2e2;color:#991b1b;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">− crash</span>
+                                <span style="background:#dcfce7;color:#166534;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">+ easy</span>
+                                <span style="background:#fee2e2;color:#991b1b;font-size:10px;font-family:'DM Mono',monospace;padding:3px 9px;border-radius:20px;font-weight:500;">− slow</span>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:10px; width:100%;">
+                                <div style="display:flex; flex-direction:column; gap:3px; flex:1;">
+                                    <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">5★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:62%;height:100%;background:#10b981;border-radius:3px;"></div></div></div>
+                                    <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:9px;color:#6b7280;font-family:'DM Mono',monospace;width:14px;">1★</span><div style="flex:1;height:5px;background:#e5e7eb;border-radius:3px;"><div style="width:7%;height:100%;background:#ef4444;border-radius:3px;"></div></div></div>
+                                </div>
+                                <div style="text-align:center;border-left:1px solid #e5e7eb;padding-left:12px;">
+                                    <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#166534;">79.5%</div>
+                                    <div style="font-size:9px;color:#6b7280;margin-top:1px;">accuracy</div>
+                                </div>
+                            </div>
+                            <span class="stat-badge" style="position:absolute;top:10px;right:10px;">50K+ reviews</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold font-serif text-lg mb-2">Pinterest App Review Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-2">Analyzed 50,000+ reviews using VADER sentiment analysis. Built a Random Forest model to predict star ratings from review text.</p>
+                            <p class="project-learning">Key insight: negation handling in VADER preprocessing was the single biggest driver of accuracy improvement over the baseline.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">NLTK</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Scikit-learn</span>
+                            </div>
+                            <a href="https://github.com/Manvi234/Pinterest-App-Review-Analysis" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Wildlife -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);">
+                            <div style="display:flex;gap:20px;align-items:center;">
+                                <div style="text-align:center;">
+                                    <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#065f46;">95.2%</div>
+                                    <div style="font-size:9px;color:#6b7280;margin-top:2px;">InceptionV3</div>
+                                </div>
+                                <div style="width:1px;height:36px;background:#a7f3d0;"></div>
+                                <div style="text-align:center;">
+                                    <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:700;color:#2c7a7b;">88.7%</div>
+                                    <div style="font-size:9px;color:#6b7280;margin-top:2px;">YOLO-NAS</div>
+                                </div>
+                            </div>
+                            <span class="stat-badge" style="background:#d1fae5;color:#065f46;border-color:#6ee7b7;">Live app</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold font-serif text-lg mb-2">Wildlife Conservation &amp; Analysis</h3>
+                            <p class="text-gray-600 text-sm mb-2">Interactive tool using InceptionV3 (95.23% accuracy) and YOLO-NAS (88.71%) for wildlife species classification, deployed live.</p>
+                            <p class="project-learning">Key insight: YOLO-NAS excelled at multi-animal frames while InceptionV3 was more reliable for single-subject close-ups.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
+                            </div>
+                            <a href="https://Wildlife-conservation.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline text-sm">View live app &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Diabetes -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #fce7f3 0%, #fdf4ff 100%);">
+                            <svg width="140" height="60" viewBox="0 0 140 60" style="overflow:visible;">
+                                <polyline points="0,55 20,45 40,35 60,25 80,18 100,14 120,12 140,11" fill="none" stroke="#db2777" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="0,55 20,48 40,42 60,37 80,32 100,28 120,24 140,22" fill="none" stroke="#f9a8d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 3"/>
+                            </svg>
+                            <span class="stat-badge" style="background:#fce7f3;color:#9d174d;border-color:#f9a8d4;">88% accuracy</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold font-serif text-lg mb-2">Onset of Diabetes Detection</h3>
+                            <p class="text-gray-600 text-sm mb-2">Deep learning model achieving 88% test accuracy on clinical data, optimized with dropout layers and hyperparameter tuning.</p>
+                            <p class="project-learning">Key insight: dropout at 0.4 combined with batch norm reduced overfitting by ~12% vs the baseline architecture.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Keras</span>
+                            </div>
+                            <a href="https://github.com/Manvi234/Diabetes-Prediction" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- A/B Testing -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);">
+                            <div style="display:flex;gap:16px;align-items:flex-end;padding:0 16px;">
+                                <div style="text-align:center;">
+                                    <div style="width:36px;height:44px;background:#93c5fd;border-radius:4px 4px 0 0;"></div>
+                                    <div style="font-size:9px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Control</div>
+                                </div>
+                                <div style="text-align:center;">
+                                    <div style="width:36px;height:56px;background:#2563eb;border-radius:4px 4px 0 0;"></div>
+                                    <div style="font-size:9px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Variant</div>
+                                </div>
+                            </div>
+                            <span class="stat-badge" style="background:#dbeafe;color:#1e3a8a;border-color:#93c5fd;">+13.4% lift</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold font-serif text-lg mb-2">Ad Bidding Optimisation (A/B Testing)</h3>
+                            <p class="text-gray-600 text-sm mb-2">A/B testing on 100K user sessions. Achieved a 13.4% lift in purchases with 95% confidence intervals.</p>
+                            <p class="project-learning">Key insight: pre-stratification by user cohort reduced variance and tightened confidence intervals without needing more data.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Pandas</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Scipy</span>
+                            </div>
+                            <a href="https://github.com/Manvi234/AB-Testing-Optimizing-Ad-Bidding" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Netflix -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 fade-in border border-gray-100">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);">
+                            <div style="display:flex;align-items:flex-end;gap:4px;padding:0 16px;">
+                                <div style="width:16px;height:50px;background:#ef4444;border-radius:3px 3px 0 0;"></div>
+                                <div style="width:16px;height:35px;background:#f97316;border-radius:3px 3px 0 0;"></div>
+                                <div style="width:16px;height:42px;background:#ef4444;border-radius:3px 3px 0 0;"></div>
+                                <div style="width:16px;height:28px;background:#f97316;border-radius:3px 3px 0 0;"></div>
+                                <div style="width:16px;height:20px;background:#fca5a5;border-radius:3px 3px 0 0;"></div>
+                                <div style="width:16px;height:15px;background:#fca5a5;border-radius:3px 3px 0 0;"></div>
+                            </div>
+                            <span class="stat-badge" style="background:#fef2f2;color:#991b1b;border-color:#fca5a5;">8K+ titles</span>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="font-bold font-serif text-lg mb-2">Netflix Content Dashboard</h3>
+                            <p class="text-gray-600 text-sm mb-2">Interactive Tableau dashboard analyzing 8K+ titles to visualize global content trends and genre popularity.</p>
+                            <p class="project-learning">Key insight: content additions accelerated post-2015 then plateaued in 2020, reflecting a shift from volume to quality strategy.</p>
+                            <div class="mb-4 flex flex-wrap gap-1.5">
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Tableau</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                            </div>
+                            <a href="https://public.tableau.com/app/profile/manvi.gawande/viz/Netflix_17190483787180/NETFLIX" target="_blank" class="font-semibold text-accent hover:underline text-sm">View dashboard &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════ -->
+        <!-- FIX 06 — Blogs & Insights (renamed)      -->
+        <!-- ══════════════════════════════════════════ -->
+        <!-- Extracurriculars Section -->
+        <section id="extracurriculars" class="py-16">
+            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Beyond the Work</h2>
+            <p class="text-center text-gray-500 text-sm mt-6 mb-12">Leadership, recognition, and research contributions</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+                <!-- ML Head -->
+                <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fade-in flex gap-4">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-xl accent-bg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <div>
+                        <span class="inline-block text-xs font-mono font-semibold accent-color bg-accent/10 px-2 py-0.5 rounded-full mb-2">Leadership</span>
+                        <h3 class="font-bold font-serif text-base leading-snug mb-1">Machine Learning Head</h3>
+                        <p class="text-sm text-gray-500">Google Developer Student Club · PCCOE R</p>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">Led the ML chapter, organizing workshops and hands-on sessions for students in machine learning and AI.</p>
+                    </div>
+                </div>
+
+                <!-- Hackathon -->
+                <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fade-in flex gap-4">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-amber-400 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <div>
+                        <span class="inline-block text-xs font-mono font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full mb-2">Award</span>
+                        <h3 class="font-bold font-serif text-base leading-snug mb-1">3rd Place · Luddy Hackathon</h3>
+                        <p class="text-sm text-gray-500">Indiana University Bloomington</p>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">Competed among university-wide teams, placing 3rd in a fast-paced technical hackathon at the Luddy School of Informatics.</p>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fade-in flex gap-4">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-emerald-500 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <span class="inline-block text-xs font-mono font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full mb-2">Copyright</span>
+                        <h3 class="font-bold font-serif text-base leading-snug mb-1">Government of India Copyright</h3>
+                        <p class="text-sm text-gray-500">Wildlife Conservation using Machine Learning</p>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">Registered intellectual property with the Government of India for the wildlife classification system built with InceptionV3 and YOLO-NAS.</p>
+                    </div>
+                </div>
+
+                <!-- IEEE Publication -->
+                <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fade-in flex gap-4">
+                    <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-blue-600 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <div>
+                        <span class="inline-block text-xs font-mono font-semibold text-blue-700 bg-blue-100 px-2 py-0.5 rounded-full mb-2">Publication</span>
+                        <h3 class="font-bold font-serif text-base leading-snug mb-1">Exploring the Potential of Prompt Engineering</h3>
+                        <p class="text-sm text-gray-500">IEEE · 2024</p>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">Gawande, M., Pawar, V., Kollu, A., &amp; Bile, A. S. (2024). A Comprehensive Analysis of Interacting with Large Language Models.</p>
+                        <a href="https://ieeexplore.ieee.org/document/10775016" target="_blank" class="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-200 px-3 py-1.5 rounded-lg hover:bg-blue-100 transition-colors duration-200">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            View Publication
+                        </a>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ══════════════════════════════════════════ -->
-        <!-- FIX 06 — Writing & Insights (renamed)      -->
-        <!-- ══════════════════════════════════════════ -->
-        <section id="writing" class="py-16 bg-white -mx-6 px-6">
-            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Writing &amp; Insights</h2>
+        <section id="blogs" class="py-16 bg-white -mx-6 px-6">
+            <h2 class="text-3xl font-bold text-center font-serif mb-4 section-heading mx-auto w-fit">Blogs &amp; Insights</h2>
             <p class="text-center text-gray-500 text-sm mt-6 mb-12">Technical walkthroughs, research notes, and project deep-dives</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
@@ -908,6 +1134,28 @@
     </footer>
 
     <script>
+        // Explore more toggle
+        function toggleExplore() {
+            const panel = document.getElementById('explore-more');
+            const icon = document.getElementById('explore-icon');
+            const btn = document.getElementById('explore-toggle');
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden');
+            icon.style.transform = isHidden ? 'rotate(180deg)' : '';
+            btn.querySelector('span') && (btn.querySelector('span').textContent = isHidden ? 'Show less' : 'Explore more · My journey');
+        }
+
+        // Internships collapse toggle
+        function toggleInternships() {
+            const panel = document.getElementById('early-internships');
+            const icon = document.getElementById('internships-icon');
+            const btn = document.getElementById('internships-toggle');
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden');
+            icon.style.transform = isHidden ? 'rotate(180deg)' : '';
+            btn.childNodes[2].textContent = isHidden ? ' Hide earlier experience' : ' Show earlier experience';
+        }
+
         // Mobile menu toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -942,6 +1190,140 @@
             });
         }, { threshold: 0.4 });
         sections.forEach(sec => scrollObserver.observe(sec));
+    </script>
+
+    <!-- ── Neural Network Background ── -->
+    <script>
+    (function () {
+        const canvas = document.getElementById('neural-bg');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const section = canvas.parentElement;
+
+        const NODE_COUNT   = 62;
+        const MAX_DIST     = 160;
+        const NODE_RADIUS  = 2.5;
+        const SPEED        = 0.35;
+        const ACCENT       = '44,122,123';   // #2c7a7b in rgb
+        const ACCENT_DARK  = '26,92,93';     // #1a5c5d in rgb
+        const MOUSE_RADIUS = 120;
+        const MOUSE_FORCE  = 0.06;
+
+        let W, H, mouse = { x: -9999, y: -9999 };
+
+        function resize() {
+            W = canvas.width  = section.offsetWidth;
+            H = canvas.height = section.offsetHeight;
+        }
+
+        class Node {
+            constructor() { this.reset(true); }
+            reset(random) {
+                this.x  = random ? Math.random() * W : (Math.random() < .5 ? 0 : W);
+                this.y  = random ? Math.random() * H : Math.random() * H;
+                this.vx = (Math.random() - .5) * SPEED;
+                this.vy = (Math.random() - .5) * SPEED;
+                this.r  = NODE_RADIUS + Math.random() * 1.5;
+                this.pulse = Math.random() * Math.PI * 2;
+            }
+            update() {
+                this.pulse += 0.02;
+
+                // Mouse repulsion
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const d  = Math.sqrt(dx * dx + dy * dy);
+                if (d < MOUSE_RADIUS && d > 0) {
+                    const force = (MOUSE_RADIUS - d) / MOUSE_RADIUS * MOUSE_FORCE;
+                    this.vx += (dx / d) * force;
+                    this.vy += (dy / d) * force;
+                }
+
+                // Dampen velocity
+                this.vx *= 0.99;
+                this.vy *= 0.99;
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Wrap edges
+                if (this.x < -10) this.x = W + 10;
+                if (this.x > W + 10) this.x = -10;
+                if (this.y < -10) this.y = H + 10;
+                if (this.y > H + 10) this.y = -10;
+            }
+            draw() {
+                const alpha = 0.25 + 0.1 * Math.sin(this.pulse);
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${ACCENT},${alpha})`;
+                ctx.fill();
+            }
+        }
+
+        let nodes = [];
+        function init() {
+            resize();
+            nodes = Array.from({ length: NODE_COUNT }, () => new Node());
+        }
+
+        function drawEdges() {
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const d  = Math.sqrt(dx * dx + dy * dy);
+                    if (d < MAX_DIST) {
+                        // Is mouse near this edge midpoint?
+                        const mx = (nodes[i].x + nodes[j].x) / 2;
+                        const my = (nodes[i].y + nodes[j].y) / 2;
+                        const md = Math.sqrt((mx - mouse.x) ** 2 + (my - mouse.y) ** 2);
+                        const highlight = md < MOUSE_RADIUS * 1.2;
+
+                        const alpha = highlight
+                            ? 0.45 * (1 - d / MAX_DIST)
+                            : 0.12 * (1 - d / MAX_DIST);
+                        const color = highlight ? ACCENT_DARK : ACCENT;
+
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.strokeStyle = `rgba(${color},${alpha})`;
+                        ctx.lineWidth   = highlight ? 1.2 : 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function loop() {
+            ctx.clearRect(0, 0, W, H);
+            drawEdges();
+            nodes.forEach(n => { n.update(); n.draw(); });
+            requestAnimationFrame(loop);
+        }
+
+        // Track mouse relative to section
+        section.addEventListener('mousemove', e => {
+            const rect = section.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        section.addEventListener('mouseleave', () => {
+            mouse.x = -9999; mouse.y = -9999;
+        });
+
+        window.addEventListener('resize', () => {
+            resize();
+            nodes.forEach(n => {
+                if (n.x > W) n.x = Math.random() * W;
+                if (n.y > H) n.y = Math.random() * H;
+            });
+        });
+
+        init();
+        loop();
+    })();
     </script>
 
 </body>
