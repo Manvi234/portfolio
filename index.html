@@ -578,40 +578,45 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in border border-gray-100 flex flex-col hover:shadow-lg transition-shadow duration-300">
                     <!-- Left: panel + info -->
                     <div class="flex flex-col w-full">
-                        <div class="project-thumb" style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);">
-                            <div style="display:flex;gap:5px;padding:0 12px;align-items:flex-end;">
-                                <div style="text-align:center;">
-                                    <div style="width:22px;height:48px;background:#2c7a7b;border-radius:3px 3px 0 0;"></div>
-                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Champions</div>
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%); flex-direction:column; gap:8px; padding:14px 16px; align-items:flex-start; justify-content:center;">
+                            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px;">
+                                <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
+                                    <div style="display:flex;align-items:center;gap:5px;">
+                                        <div style="background:#2c7a7b;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">BigQuery</div>
+                                        <div style="font-size:8px;color:#6b7280;">→</div>
+                                        <div style="background:#0d9488;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">dbt (3-layer)</div>
+                                    </div>
+                                    <div style="display:flex;align-items:center;gap:5px;">
+                                        <div style="background:#065f46;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">RFM Model</div>
+                                        <div style="font-size:8px;color:#6b7280;">→</div>
+                                        <div style="background:#f0fdf4;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:#065f46;border:1px solid #86efac;font-weight:600;">A/B Tests</div>
+                                    </div>
                                 </div>
-                                <div style="text-align:center;">
-                                    <div style="width:22px;height:36px;background:#34d399;border-radius:3px 3px 0 0;"></div>
-                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Loyal</div>
-                                </div>
-                                <div style="text-align:center;">
-                                    <div style="width:22px;height:28px;background:#86efac;border-radius:3px 3px 0 0;"></div>
-                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">At Risk</div>
-                                </div>
-                                <div style="text-align:center;">
-                                    <div style="width:22px;height:20px;background:#bbf7d0;border-radius:3px 3px 0 0;"></div>
-                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">New</div>
-                                </div>
-                                <div style="text-align:center;">
-                                    <div style="width:22px;height:14px;background:#d1fae5;border-radius:3px 3px 0 0;"></div>
-                                    <div style="font-size:8px;color:#6b7280;margin-top:3px;font-family:'DM Mono',monospace;">Dormant</div>
+                                <div style="border-left:1px solid #86efac;padding-left:10px;display:flex;flex-direction:column;gap:3px;text-align:right;">
+                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#2c7a7b;">96K+</div>
+                                    <div style="font-size:8px;color:#6b7280;">customers</div>
+                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#065f46;margin-top:2px;">55</div>
+                                    <div style="font-size:8px;color:#6b7280;">data tests</div>
                                 </div>
                             </div>
-                            <span class="stat-badge">96K+ customers</span>
+                            <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                                <span style="background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">p=0.0003</span>
+                                <span style="background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">5 personas</span>
+                                <span style="background:#d1fae5;color:#2c7a7b;border:1px solid #86efac;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">100K+ orders</span>
+                            </div>
                         </div>
                         <div class="p-5 flex flex-col flex-1">
                             <h3 class="font-bold font-serif text-lg mb-2">E-Commerce Segmentation &amp; RFM Analysis</h3>
-                            <p class="text-gray-600 text-sm mb-2">SQL-based pipeline for 100K+ records with RFM model segmenting 96K+ customers into 5 personas. Full-stack BI suite via Tableau and Streamlit.</p>
-                            <p class="project-learning">Established an A/B testing framework for personalized retention campaigns across behavioral customer segments.</p>
+                            <p class="text-gray-600 text-sm mb-2">End-to-end cloud analytics pipeline on 100K+ Brazilian e-commerce orders. Loaded raw data into Google BigQuery, modelled with dbt (3-layer staging → intermediate → marts architecture), and validated with 55 automated data tests. Built a custom RFM model segmenting 96K customers into 5 behavioral personas. Mart tables are partitioned and clustered for query optimization.</p>
+                            <p class="project-learning">Designed two A/B tests (chi-squared + Mann-Whitney U) to validate retention strategies — 20% win-back discount drove a statistically significant reactivation lift (p=0.0003).</p>
                             <div class="mb-4 flex flex-wrap gap-1.5">
                                 <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">SQL</span>
                                 <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Google BigQuery</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">dbt</span>
                                 <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Tableau</span>
                                 <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">GCP</span>
                             </div>
                             <div class="flex gap-4 mt-auto">
                                 <a href="https://github.com/Manvi234/Customer-Segmentation-RFM-Analysis" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
@@ -629,54 +634,56 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden fade-in border border-gray-100 flex flex-col hover:shadow-lg transition-shadow duration-300">
                     <!-- Left: panel + info -->
                     <div class="flex flex-col w-full">
-                        <div class="project-thumb" style="background: linear-gradient(135deg, #e6f4f4 0%, #f0fafa 100%); flex-direction:column; gap:8px; padding:14px 16px; align-items:flex-start; justify-content:center;">
+                        <div class="project-thumb" style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); flex-direction:column; gap:8px; padding:14px 16px; align-items:flex-start; justify-content:center;">
                             <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px;">
                                 <div style="display:flex;flex-direction:column;gap:5px;flex:1;">
                                     <div style="display:flex;align-items:center;gap:5px;">
-                                        <div style="background:#2c7a7b;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">CLIP ViT-B/32</div>
-                                        <div style="font-size:8px;color:#6b7280;">→</div>
-                                        <div style="background:#0d9488;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">FAISS</div>
+                                        <div style="background:#4f46e5;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">Two-Tower Model</div>
+                                        <div style="font-size:8px;color:#a5b4fc;">→</div>
+                                        <div style="background:#7c3aed;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">FastAPI</div>
                                     </div>
                                     <div style="display:flex;align-items:center;gap:5px;">
-                                        <div style="background:#1a5c5d;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">Moondream2</div>
-                                        <div style="font-size:8px;color:#6b7280;">→</div>
-                                        <div style="background:#e6f4f4;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:#1a5c5d;border:1px solid #b2d8d8;font-weight:600;">ONNX</div>
+                                        <div style="background:#6d28d9;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:white;font-weight:600;">Kafka + PySpark</div>
+                                        <div style="font-size:8px;color:#a5b4fc;">→</div>
+                                        <div style="background:#312e81;border-radius:5px;padding:2px 7px;font-family:'DM Mono',monospace;font-size:8px;color:#c4b5fd;border:1px solid #4f46e5;font-weight:600;">Streamlit</div>
                                     </div>
                                 </div>
-                                <div style="border-left:1px solid #b2d8d8;padding-left:10px;display:flex;flex-direction:column;gap:3px;text-align:right;">
-                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#2c7a7b;">88.2%</div>
-                                    <div style="font-size:8px;color:#6b7280;">Top-1 Acc.</div>
-                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#1a5c5d;margin-top:2px;">1.82×</div>
-                                    <div style="font-size:8px;color:#6b7280;">CPU speedup</div>
+                                <div style="border-left:1px solid #4f46e5;padding-left:10px;display:flex;flex-direction:column;gap:3px;text-align:right;">
+                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#a5b4fc;">100K+</div>
+                                    <div style="font-size:8px;color:#c4b5fd;">ratings trained</div>
+                                    <div style="font-family:'DM Mono',monospace;font-size:14px;font-weight:700;color:#c4b5fd;margin-top:2px;">9,700+</div>
+                                    <div style="font-size:8px;color:#c4b5fd;">movies</div>
                                 </div>
                             </div>
                             <div style="display:flex;gap:5px;flex-wrap:wrap;">
-                                <span style="background:#d1fae5;color:#065f46;border:1px solid #6ee7b7;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">P99 &lt; 100ms</span>
-                                <span style="background:#e6f4f4;color:#1a5c5d;border:1px solid #b2d8d8;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">56% mem ↓</span>
-                                <span style="background:#e6f4f4;color:#2c7a7b;border:1px solid #b2d8d8;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">90 classes</span>
+                                <span style="background:#312e81;color:#a5b4fc;border:1px solid #4f46e5;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">Real-time pipeline</span>
+                                <span style="background:#312e81;color:#c4b5fd;border:1px solid #6d28d9;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">Cold-start solver</span>
+                                <span style="background:#312e81;color:#a5b4fc;border:1px solid #4f46e5;border-radius:20px;padding:2px 8px;font-size:8px;font-family:'DM Mono',monospace;font-weight:600;">Live backend</span>
                             </div>
                         </div>
                         <div class="p-5 flex flex-col flex-1">
-                            <h3 class="font-bold font-serif text-lg mb-2">Fash.io: Multimodal Fashion AI</h3>
-                            <p class="text-gray-600 text-sm mb-2">Multimodal AI system using fine-tuned CLIP (ViT-B/32) and Moondream2 VLM for e-commerce catalog ingestion and visual search across 90 product classes — 88.2% Top-1 accuracy, ROUGE-L 0.678.</p>
-                            <p class="project-learning">Two-stage pipeline (CLIP retrieval + VLM generation) with ONNX optimization (1.82× speedup), sub-5ms FAISS search, 56% memory reduction (813MB → 351MB), and 50% R@1 gain via contrastive fine-tuning.</p>
+                            <h3 class="font-bold font-serif text-lg mb-2">CineMatch — Movie Recommendation System</h3>
+                            <p class="text-gray-600 text-sm mb-2">Two-Tower deep learning model trained on 100K+ ratings, serving personalized recommendations for 9,700+ movies via a live FastAPI backend and Streamlit frontend. Built a content-based cold-start solution for new users using genre-preference embeddings.</p>
+                            <p class="project-learning">Designed a real-time event pipeline with Kafka and PySpark Structured Streaming for continuous user interaction ingestion and feature updates.</p>
                             <div class="mb-4 flex flex-wrap gap-1.5">
                                 <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Python</span>
-                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">PyTorch</span>
-                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">CLIP</span>
-                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">FAISS</span>
-                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">ONNX</span>
-                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Moondream2</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">TensorFlow/Keras</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">PySpark</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Kafka</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">FastAPI</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Streamlit</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">Docker</span>
+                                <span class="inline-block bg-gray-100 rounded-full px-2.5 py-0.5 text-xs font-semibold text-gray-600">GitHub Actions</span>
                             </div>
                             <div class="flex gap-4 mt-auto">
-                                <a href="https://github.com/Vis-3/FASH.io/tree/master" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
-                                <a href="https://huggingface.co/spaces/Sanskar1120/fash-io-dashboard" target="_blank" class="font-semibold text-accent hover:underline text-sm">Live app &rarr;</a>
+                                <a href="https://github.com/Manvi234/Movie_Recommendation_System" target="_blank" class="font-semibold text-accent hover:underline text-sm">View code &rarr;</a>
+                                <a href="https://cinemamatch.streamlit.app" target="_blank" class="font-semibold text-accent hover:underline text-sm">Live app &rarr;</a>
                             </div>
                         </div>
                     </div>
                     <!-- Right: GIF -->
                     <div class="w-full bg-gray-50 flex items-center justify-center border-t border-gray-100 overflow-hidden" style="min-height:220px;">
-                        <img src="FASH.io.gif" alt="Fash.io demo" class="w-full h-full object-contain p-3" style="max-height:340px;">
+                        <img src="movie_recommendation.gif" alt="CineMatch demo" class="w-full h-full object-contain p-3" style="max-height:340px;">
                     </div>
                 </div>
 
@@ -1015,6 +1022,7 @@
                         <div class="skill-item-row"><span class="skill-item-name">Pandas / NumPy</span><span class="skill-proficiency proficient">Proficient</span></div>
                         <div class="skill-item-row"><span class="skill-item-name">NLP (NLTK, spaCy)</span><span class="skill-proficiency proficient">Proficient</span></div>
                         <div class="skill-item-row"><span class="skill-item-name">RAG Pipelines</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">MLOps</span><span class="skill-proficiency familiar">Familiar</span></div>
                     </div>
                 </div>
 
@@ -1035,7 +1043,7 @@
                     </div>
                 </div>
 
-                <!-- Data Engineering -->
+                <!-- Data Engineering & Cloud -->
                 <div class="bg-white rounded-xl shadow-md p-5 border border-gray-100 fade-in">
                     <div class="flex items-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1043,14 +1051,17 @@
                             <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
                             <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
                         </svg>
-                        <h3 class="text-base font-bold text-dark-gray">Data Engineering</h3>
+                        <h3 class="text-base font-bold text-dark-gray">Data Engineering & Cloud</h3>
                     </div>
-                    <p class="skill-context">I build ETL pipelines and data infrastructure for large-scale datasets  including web scraping and cloud storage workflows.</p>
+                    <p class="skill-context">I build end-to-end data pipelines — from real-time streaming and batch ETL to cloud-native modelling and query optimisation on GCP and AWS.</p>
                     <div class="space-y-1">
-                        <div class="skill-item-row"><span class="skill-item-name">SQL & NoSQL</span><span class="skill-proficiency proficient">Proficient</span></div>
-                        <div class="skill-item-row"><span class="skill-item-name">Docker</span><span class="skill-proficiency familiar">Familiar</span></div>
-                        <div class="skill-item-row"><span class="skill-item-name">AWS</span><span class="skill-proficiency familiar">Familiar</span></div>
-                        <div class="skill-item-row"><span class="skill-item-name">Bash / Linux</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">SQL & Query Optimisation</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">dbt</span><span class="skill-proficiency proficient">Proficient</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">GCP / BigQuery</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Kafka</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">PySpark</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Docker / AWS</span><span class="skill-proficiency familiar">Familiar</span></div>
+                        <div class="skill-item-row"><span class="skill-item-name">Airflow</span><span class="skill-proficiency familiar">Familiar</span></div>
                     </div>
                 </div>
 
